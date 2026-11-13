@@ -26,3 +26,15 @@ The agent selected this scope during the first work session. The cup task gives 
 
 - Select the tools for the first prototype and record how to run it.
 - Set device and resource limits before adding headset support or more simulation features.
+
+## Check Codex CLI usage limits
+
+Run this command from the project directory with Node.js and Codex CLI on PATH. Sign in to Codex CLI with ChatGPT.
+
+```powershell
+node tools/codex-limits.mjs
+```
+
+The tool returns JSON with the reported quota windows, percentages used and remaining, and reset times in UTC. A window of 10,080 minutes is one week. Use the reported windows when planning work. Treat missing windows and exact remaining token counts as unknown.
+
+The tool uses the [Codex app-server rate limit request](https://learn.chatgpt.com/docs/app-server#6-rate-limits-chatgpt). It does not start a model turn. If the request fails or returns no windows, the tool prints an error and exits with code 1.
