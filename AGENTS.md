@@ -157,6 +157,14 @@ Maintain short-, mid-, and long-term goals at the same time. Use about 2 to 3, 1
 
 Review all three goals before choosing a session task and after checking the results. Use current progress, quality evidence, time, and compute limits to decide whether to revise the goals or their estimates. Use the completion conditions to decide when a goal is complete. Record what changed and why in the work log. Keep completed goals and past revisions available through the work logs and Git history. Preserve the original ultimate goal under Rule 5.
 
+## Rule 15: Organize teams and assign roles
+
+Organize one or more subagent teams when this will help complete the session goal more efficiently. Give each team a specific result. Assign every member a role with a clear responsibility, scope, expected result, and check. Choose roles to match the work, such as implementation, testing, or evidence review.
+
+The agent that communicates with the user coordinates the teams and verifies the combined result under Rule 9. Identify work that must happen in order. Assign separate ownership when members edit files, and specify who gives each result to the next member.
+
+Use the smallest team structure that fits the work and available compute. Record roles and contributions in the work log. After the work, use the results and time spent on coordination to decide whether to keep or change the team structure.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
