@@ -1,0 +1,17 @@
+{
+  "description": "Review project rules and goals when work ends.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"const root = require('node:child_process').execFileSync('git', ['rev-parse', '--show-toplevel'], {encoding: 'utf8'}).trim(); import(require('node:url').pathToFileURL(require('node:path').join(root, '.codex/hooks/check-project.mjs')).href);\"",
+            "timeout": 10,
+            "statusMessage": "Checking project rules and goals"
+          }
+        ]
+      }
+    ]
+  }
+}

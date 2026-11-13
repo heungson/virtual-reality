@@ -1,5 +1,11 @@
 # VirtualReality
 
+## Codex end-of-work review
+
+When Codex first attempts to finish a turn, the project Stop hook requires one more pass. It directs the agent to read AGENTS.md and GOALS.md, compare the result with the applicable rules and goals, and report unresolved checks. The next stop can proceed.
+
+Use Codex with Git and Node.js on PATH. Trust the project and review the hook with `/hooks` in the CLI or **Settings > Hooks** in the desktop app. Codex skips the hook until it is trusted. The hook can require another pass. It cannot prove that the agent completed the review. See the [Codex hook documentation](https://learn.chatgpt.com/docs/hooks).
+
 ## Ultimate goal
 
 Create a virtual reality that simulates the human world.
