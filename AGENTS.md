@@ -217,6 +217,8 @@ Use GOALS.md for the active goals and goals/README.md for the goal register. Giv
 
 When a goal changes, update its record and link the dated evidence for the decision. Keep the ID for estimate or check changes that preserve the intended result. If the intended result changes, record the old goal as superseded and link its replacement. Keep completed and superseded records available by ID.
 
+Keep active goal links and estimates in GOALS.md, goal details in the register, and the next session task in work-logs/README.md. Link to these sources from other documents. At a planning review, check that the next task supports the active short-term goal. The closeout validator checks record fields and arithmetic. The coordinator must check that the plan and evidence agree.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.

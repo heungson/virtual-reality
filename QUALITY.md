@@ -2,9 +2,9 @@
 
 Use the [criteria catalog](quality/CRITERIA.md), [latest assessment](quality/evidence/2026/11/2026-11-14-baseline.md), and [human assessment procedure](quality/HUMAN-PROCEDURE.md). Compare the simulation with what a typical person expects in a similar real setting.
 
-## Next milestone
+## Current work
 
-Address WORLD-01 (physical behavior). Use one rule to release the cup over the table, stand, and floor. Verify that the cup settles on each surface, stays there when the player returns, and can be picked up again. Repeat the original cup task and reset checks.
+Use the [active goals](GOALS.md) and [next session plan](work-logs/README.md). Record simulation results here through dated evidence links.
 
 ## Record management
 

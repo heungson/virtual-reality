@@ -2,11 +2,11 @@
 
 [GOALS.md](../GOALS.md) shows the active plan. This register tracks goals from start to close.
 
-| Range | Records | Active ID |
-| --- | --- | --- |
-| Long | [Long-term goals](L.md) | L-002 |
-| Mid | [Mid-term goals](M.md) | M-002 |
-| Short | [Short-term goals](S.md) | S-002 |
+| Range | Records |
+| --- | --- |
+| Long | [Long-term goals](L.md) |
+| Mid | [Mid-term goals](M.md) |
+| Short | [Short-term goals](S.md) |
 
 Assign the next unused number in the range. Use the ID in the heading and in all related work logs. Record the parent ID, intended result, completion checks, status, and links to decisions and evidence. When the status changes, update the record and link the work log that explains why. Use Git for earlier versions of the record.
 

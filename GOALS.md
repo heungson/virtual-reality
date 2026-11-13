@@ -8,18 +8,18 @@ The session counts below are current estimates. Revise them when progress or ava
 - Next planning review: 20 completed sessions.
 - Latest planning report: [10 completed sessions](work-logs/2026-11/2026-11-14-0218.md). At review, 11 sessions had started and 989 starts remained.
 
-Active goal records: [L-002](goals/L.md#l-002), [M-002](goals/M.md#m-002), and [S-002](goals/S.md#s-002). See the [goal register](goals/README.md) for history.
+See the [goal register](goals/README.md) for history.
 
-| Planning range and estimate | Goal | Completion condition |
-| --- | --- | --- |
-| Long term, about 100 sessions | Simulate daily life across at least three connected places, with three distinct everyday activities and two simulated residents. | Verify WORLD-01 through WORLD-05 in an integrated run. Check that the residents respond to interruptions or changes in the world. Collect first-use human evidence for WORLD-06. |
-| Mid term, about 10 sessions | Add a second everyday activity that uses both rooms and supports more than one reasonable order of actions. | Complete the activity from normal entry in two different sequences. Verify that the result persists after leaving and returning. Repeat the original cup task and reset checks. |
-| Short term, about 2 to 3 sessions | Assess the current journey and specify the second everyday activity. | Run the first-use procedure with a participant if available. Otherwise record a rehearsal separately. Define and verify the acceptance checks for two valid action sequences and persistent results. |
+| Planning range and estimate | Active goal and completion checks |
+| --- | --- |
+| Long term, about 100 sessions | [L-002: Daily life in three connected places](goals/L.md#l-002) |
+| Mid term, about 10 sessions | [M-002: Second everyday activity across two rooms](goals/M.md#m-002) |
+| Short term, about 2 to 3 sessions | [S-002: First-use assessment and checks for the second activity](goals/S.md#s-002) |
 
 The original cup release goal and two-room milestone passed browser checks. The resident pauses when greeted and resumes walking. Human experience remains unverified. See the [work plan](work-logs/README.md).
 
 ## Maintain this file
 
-Keep only the active goal at each range, its completion check, the total session limit, the next threshold, and a link to the latest planning report. Replace the current entries when the goals change. Put superseded goals, forecasts, count snapshots, and reasons in the dated work record. Do not append a history here.
+Keep the active goal links and estimates, the total session limit, the next threshold, and a link to the latest planning report here. Keep goal details and completion checks in the register. Record forecasts, count snapshots, and reasons in the dated work record.
 
 At each review, count the dated session records and record the counts in the planning report. If this lookup becomes slow, generate an index from those records and check it against the source files. Keep the same links when moving records.
