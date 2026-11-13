@@ -24,6 +24,7 @@ Use one record for each daily work period.
 - Results achieved compared with the plan:
 - Verification results:
 - Team performance: Link goal revisions and record team and member IDs, roles, results, and evidence under TEAM-PERFORMANCE.md.
+- Team and session efficiency (TEAM-04): Record elapsed minutes × agent count = agent-minutes for each scope, with the verified result.
 - Coordinator assessment: Record coordination costs, the management change to try, and how to check its effect.
 - Team instructions: Record role cards and Git revision used. Record any instruction change, its evidence, the next comparable check, and the result of any prior change under review.
 - Test applications closed and closure check:

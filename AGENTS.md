@@ -171,6 +171,8 @@ The coordinator must assess both simulation quality under Rule 11 and how well i
 
 For each session with delegated work, record each team and member, their roles, assigned goal, expected result, and actual result. Link the evidence to the active short-, mid-, and long-term goals. Review performance at each goal review. Account for dependencies and changes in scope before judging a team or member.
 
+Always include the efficiency measure in team assessments. Multiply elapsed time by the number of agents in the same scope. Record the time, agent count, product, and verified result. Use TEAM-PERFORMANCE.md to calculate and compare this measure.
+
 Use the assessment to select a specific improvement to team structure, task assignment, handoffs, or verification. Define how to check its effect. Review the criteria when they miss a problem or give an unclear result. Record what changed, why, and which version was used for each assessment.
 
 ## Rule 17: Share tools and improve how teams work
