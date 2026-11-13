@@ -41,6 +41,8 @@ Open `prototype/index.html` in a desktop browser. The prototype uses HTML, JavaS
 
 Walk around the table and through the doorway in the back wall to reach the second room. You can carry the cup through the doorway, release it onto the counter or floor, and return to pick it up later.
 
+A resident walks in the second room. Move within reach, face the resident, and press F to greet them. The resident stops for three simulation seconds and then resumes walking. Reset also restarts the resident's routine.
+
 ## Decisions still required
 
 - Set device and resource limits before adding headset support or more simulation features.

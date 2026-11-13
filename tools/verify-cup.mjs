@@ -157,7 +157,7 @@ try {
   await expectStatus(/task complete.*yellow stand/i);
   await reset();
   console.log('PASS: original cup task and Reset');
-  if (process.argv.includes('--connected')) {
+  if (process.argv.includes('--connected') || process.argv.includes('--resident')) {
     await press('E');
     await expectStatus(/you have the cup/i);
     await pose(0, 6);
@@ -181,6 +181,30 @@ try {
     assert(await evaluate('Math.abs(player.z - 1.1) < 0.01'), 'Reset returns player to the first room');
     await reset();
     console.log('PASS: doorway crossing, carrying, counter persistence, second-room floor pickup, and Reset');
+  }
+  if (process.argv.includes('--resident')) {
+    const before = await evaluate('resident.z');
+    await wait(500);
+    assert(Math.abs((await evaluate('resident.z')) - before) > 0.1, 'Resident walks without input');
+    await press('F');
+    await expectStatus(/walk closer to the resident/i);
+    await pose(-1.6, (await evaluate('resident.z')) - 0.7);
+    await press('F');
+    await expectStatus(/hello.*wait here briefly/i);
+    const pausedAt = await evaluate('resident.z');
+    await wait(400);
+    assert(Math.abs((await evaluate('resident.z')) - pausedAt) < 0.01, 'Resident waits after interaction');
+    let resumed;
+    for (let attempt = 0; attempt < 45 && !resumed; attempt += 1) {
+      resumed = Math.abs((await evaluate('resident.z')) - pausedAt) > 0.05;
+      if (!resumed) await wait(100);
+    }
+    assert(resumed, 'Resident resumes the routine');
+    const resetState = await evaluate(`document.querySelector('#reset').click();
+      ({ position: resident.z, pause: resident.pausedSeconds })`);
+    assert.equal(resetState.position, 9.4, 'Reset restores resident start position');
+    assert.equal(resetState.pause, 0, 'Reset clears resident pause');
+    console.log('PASS: resident routine, distant denial, nearby interruption, resume, and Reset');
   }
   await request('Emulation.setDeviceMetricsOverride', {
     width: 800, height: 480, deviceScaleFactor: 1, mobile: false,

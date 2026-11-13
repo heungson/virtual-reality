@@ -14,14 +14,17 @@ const radius = 0.19;
 const releaseDistance = 1;
 const room = { left: -3.2, right: 3.2, front: 0, back: 12.8, height: 3.1 };
 const partition = { z: 6.4, opening: 0.9, openingHeight: 2.2 };
+const residentRoute = { x: -1.6, start: 9.4, end: 11.3, speed: 0.65 };
 let player;
 let cup;
+let resident;
 let taskComplete;
 let lastFrame;
 
 function resetRoom() {
   player = { x: 0, z: 1.1, yaw: 0, pitch: -0.12 };
   cup = { x: table.x, z: table.z, support: table };
+  resident = { x: residentRoute.x, z: residentRoute.start, direction: 1, pausedSeconds: 0 };
   taskComplete = false;
   pressed.clear();
   status.textContent = 'The cup is on the table.';
@@ -61,6 +64,36 @@ function move(seconds) {
 function look(yaw, pitch) {
   player.yaw += yaw;
   player.pitch = Math.max(-1.1, Math.min(1.1, player.pitch + pitch));
+}
+
+function updateResident(seconds) {
+  if (resident.pausedSeconds > 0) {
+    resident.pausedSeconds = Math.max(0, resident.pausedSeconds - seconds);
+    if (resident.pausedSeconds === 0 && status.textContent === 'Hello. I will wait here briefly.') {
+      status.textContent = 'The resident has resumed walking.';
+    }
+    return;
+  }
+
+  resident.z += resident.direction * residentRoute.speed * seconds;
+  if (resident.z >= residentRoute.end || resident.z <= residentRoute.start) {
+    resident.z = Math.max(residentRoute.start, Math.min(residentRoute.end, resident.z));
+    resident.direction *= -1;
+  }
+}
+
+function greetResident() {
+  const x = resident.x - player.x;
+  const z = resident.z - player.z;
+  const distance = Math.hypot(x, z);
+  if (crossesWall(resident.x, resident.z) || distance > reach) {
+    status.textContent = 'Walk closer to the resident. Then press F again.';
+  } else if (x * Math.sin(player.yaw) + z * Math.cos(player.yaw) < distance * 0.5) {
+    status.textContent = 'Turn to face the resident. Then press F again.';
+  } else {
+    resident.pausedSeconds = 3;
+    status.textContent = 'Hello. I will wait here briefly.';
+  }
 }
 
 function useObject() {
@@ -189,6 +222,22 @@ function makeCup(x, y, z) {
   return faces;
 }
 
+function makeResident() {
+  const { x, z } = resident;
+  const clothes = ['#3a5581', '#49658f', '#5e7da8'];
+  const skin = ['#ab7958', '#be8867', '#d59c77'];
+  const shoes = ['#39342f', '#4a4139', '#5f5247'];
+  const stride = resident.pausedSeconds > 0 ? 0 : Math.sin(resident.z * 12) * 0.11;
+  return [
+    ...box(x, 0.55, z, 0.42, 0.70, 0.27, clothes),
+    ...box(x, 1.25, z, 0.29, 0.32, 0.27, skin),
+    ...box(x - 0.11, 0, z + stride, 0.15, 0.57, 0.20, shoes),
+    ...box(x + 0.11, 0, z - stride, 0.15, 0.57, 0.20, shoes),
+    ...box(x - 0.27, 0.60, z, 0.11, 0.55, 0.15, clothes),
+    ...box(x + 0.27, 0.60, z, 0.11, 0.55, 0.15, clothes),
+  ];
+}
+
 function toView([x, y, z]) {
   const dx = x - player.x;
   const dy = y - 1.58;
@@ -246,6 +295,7 @@ function frame(time) {
   const seconds = lastFrame === undefined ? 0 : Math.min(0.05, (time - lastFrame) / 1000);
   lastFrame = time;
   move(seconds);
+  updateResident(seconds);
   const width = Math.round(canvas.clientWidth * devicePixelRatio);
   const height = Math.round(canvas.clientHeight * devicePixelRatio);
   if (canvas.width !== width || canvas.height !== height) {
@@ -257,7 +307,8 @@ function frame(time) {
   paint(surfaces);
   const cupFaces = cup ? makeCup(cup.x, cup.support.top, cup.z) : [];
   const firstRoom = cup && cup.z < partition.z ? [...furniture, ...cupFaces] : furniture;
-  const secondRoom = cup && cup.z >= partition.z ? [...kitchen, ...cupFaces] : kitchen;
+  const secondRoom = [...kitchen, ...makeResident()];
+  if (cup && cup.z >= partition.z) secondRoom.push(...cupFaces);
   const inFirstRoom = player.z < partition.z;
   paint(inFirstRoom ? secondRoom : firstRoom, true);
   paint(divider);
@@ -283,6 +334,8 @@ canvas.addEventListener('keydown', (event) => {
     useObject();
   } else if (event.code === 'KeyR' && !event.repeat) {
     releaseAhead();
+  } else if (event.code === 'KeyF' && !event.repeat) {
+    greetResident();
   }
 });
 window.addEventListener('keyup', (event) => pressed.delete(event.code));
