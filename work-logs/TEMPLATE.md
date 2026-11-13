@@ -8,6 +8,7 @@ Use one record for each daily work period.
 - Window length:
 - Planned end time:
 - Goal and reason for priority:
+- Link to the short-term goal:
 - Planned results:
 - Estimated time for work and checks:
 - Next useful step and its check:
@@ -29,3 +30,4 @@ Use one record for each daily work period.
 - Next window length:
 - Next planned amount of work:
 - Reason for the next window and amount of work:
+- Review of the 100-, 10-, and 2- to 3-session goals. Record any changes and their reasons:
