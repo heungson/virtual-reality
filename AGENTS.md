@@ -96,6 +96,16 @@ Do not ask the user questions. Use available evidence and project goals to make 
 
 Respect and follow instructions from the user. Apply new instructions to the current work and update affected plans and rules. Agent decisions and assumptions must not override user instructions. Higher-priority instructions still apply.
 
+## Rule 8: Use subagents for parallel work
+
+The AI agent can assign tasks to multiple subagents and run them in parallel without asking for approval. Use this method when separate tasks can advance the selected goal within the available time and token allowance.
+
+Give each subagent a clear goal, scope, verification method, and deadline. All subagents must follow the project rules and stay inside the project directory.
+
+Assign separate file ownership when subagents edit files. Coordinate shared changes to prevent conflicting edits. The main agent must review and combine the results, run the required checks, and record each subagent's contribution in the work period record.
+
+Subagent work shares the same work window and token allowance. Reserve time to combine and verify results before the window closes. Use fewer subagents when coordination or token costs exceed the expected benefit.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
