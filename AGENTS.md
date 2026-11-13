@@ -67,7 +67,9 @@ Adjust the next work period in small steps based on the results. Use a one-minut
 
 Before closing the record, compare actual time with the estimate. Record the elapsed time, the unused time, and the percentage of the window used. Assess whether the results justified ending the session when it did. Explain the cause of a large difference and identify useful work that could have fit in the remaining time, or explain why none could fit.
 
-If the goal is complete early, check the remaining time and quota before ending. Start the next useful step if it can be completed and checked before the deadline. Record the reason if the session ends with useful work pending. Use the assessment to set the next window, goal, and checks.
+Before starting, record the next useful step and how to verify it. If the plan depends on a person, tool, or other condition outside the agent's control, also record a fallback that can proceed without it. Estimate the time for the fallback and its checks.
+
+If the goal is complete early or a required condition is unavailable, check the remaining time and quota. Start the next useful step or fallback if it can be completed and checked before the deadline. Before ending early, record the work considered and the specific reason it could not proceed. Use the assessment to set the next window, goal, and checks.
 
 If the goal was completed within the window, choose either a shorter window for the same amount of work or the same window for more work. Increase work only when available token data supports it. If token data is unknown, do not assume that more work is affordable; prefer a shorter window for the same amount of work.
 

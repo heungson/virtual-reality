@@ -10,6 +10,8 @@ Use one record for each daily work period.
 - Goal and reason for priority:
 - Planned results:
 - Estimated time for work and checks:
+- Next useful step and its check:
+- Fallback, estimated time, and check if an outside condition is unavailable:
 - Verification method and completion conditions:
 - Available daily and weekly token allowance, or unknown:
 - Actual end time:
