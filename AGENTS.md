@@ -131,6 +131,8 @@ Use the smallest workload that can produce and verify the required result. Limit
 
 Use QUALITY.md to maintain the current assessment criteria and the latest quality assessment. Give each criterion an observable check and a condition for success. Record the result, the evidence, and any limits of the check.
 
+Use the ultimate goal in README.md to define criteria for the simulated world. Link each simulation milestone to a gap in those criteria and specify the evidence that will show progress. Keep prototype regression checks separate. Record the reason for changes to the criteria or milestones.
+
 Assess quality from the perspective of a typical human user. For each scenario, describe what a person with no prior knowledge of the simulation would expect to see, understand, and do. Compare the experience with ordinary human experience in a similar real setting. Record assumptions about the user. Identify which results come from human observation and which come from automated checks or agent judgment.
 
 Include how much longer human users want to stay when the required part of the session ends. Record the additional time they say they want, including zero, and their reasons if they give them. If users can choose to stay longer, record that time separately. Treat the result as one part of quality. Mark it as unverified until human users take part.

@@ -5,7 +5,7 @@
 - Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
 - Latest work record: [2026-11-14-0127.md](2026-11/2026-11-14-0127.md).
-- Next task: Run the human assessment if a participant is available. Otherwise, check native zoom from the browser menu if accessible, or verify the full keyboard-only task in a narrow viewport.
+- Next task: Start the physical behavior milestone in QUALITY.md. Use a shared rule for releasing the cup onto the table, stand, or floor. Verify where it settles, pickup after release, and the existing cup task and reset. If the work cannot fit the window, define and verify the smallest part that can.
 - Last quota check: 69% of the weekly quota remained. Daily quota and exact token count unknown.
 
 ## File structure

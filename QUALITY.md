@@ -1,5 +1,26 @@
 # Simulation quality
 
+## Progress toward the ultimate goal
+
+The goal is to create a virtual reality that simulates the human world. Assess each scenario against what a person would expect in a similar real setting. Use the following criteria to choose milestones. Each milestone tests a bounded part of the goal.
+
+| Criterion | Observable check | Current evidence |
+| --- | --- | --- |
+| Physical behavior | Use the same physical rule in different situations. For example, release an object over a table and over open floor. It settles on the surface below it. | Cup Room has collision and fixed placement checks. General object behavior is unverified. |
+| Continuity | Change an object, leave the area, and return. Its state reflects what happened while the user was away. | Cup placement persists while the player walks in the room. Continuity across areas is unverified. |
+| Human activity | Complete a familiar activity by more than one reasonable sequence. The world responds consistently and shows the consequences. | One scripted cup task works. Multiple valid sequences are unverified. |
+| Social behavior | Observe a simulated person pursue a routine. Interrupt it. Check that their response fits the situation and their knowledge. | No evidence yet. |
+| Connected places | Carry an object from one place to another. Check that the same rules apply and that both places retain the effects of the action. | Only one room exists. |
+| Human experience | Observe first-time users. Record where their actions match real-world expectations, where they need help, and whether they choose to stay or explore. | Browser checks exist. Human evidence is unavailable. |
+
+### Next milestone
+
+Make the cup behave consistently on the table, stand, and floor. Use one rule for releasing it. Check that it settles on the correct surface, can be picked up again, and remains where it settled when the player walks away and returns. Keep the existing cup task and reset checks. Record browser results separately from any human observations.
+
+This milestone addresses physical behavior first. A shared rule for a familiar object gives later rooms and activities behavior that can be tested in more than one setting.
+
+## Cup Room regression checks
+
 Use these criteria for the current desktop prototype. See README.md for the first version completion checks.
 
 Assess the room from the perspective of a person who is familiar with an ordinary room and has never used this simulation. Check whether the person can identify the table, cup, and stand, understand the controls, and predict what happens when they walk, reach for the cup, or put it down.
