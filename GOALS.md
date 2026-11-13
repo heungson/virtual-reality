@@ -8,6 +8,8 @@ The session counts below are current estimates. Revise them when progress or ava
 - Next planning review: 20 completed sessions.
 - Latest planning report: [10 completed sessions](work-logs/2026-11/2026-11-14-0218.md). At review, 11 sessions had started and 989 starts remained.
 
+Active goal records: [L-002](goals/L.md#l-002), [M-002](goals/M.md#m-002), and [S-002](goals/S.md#s-002). See the [goal register](goals/README.md) for history.
+
 | Planning range and estimate | Goal | Completion condition |
 | --- | --- | --- |
 | Long term, about 100 sessions | Simulate daily life across at least three connected places, with three distinct everyday activities and two simulated residents. | Verify WORLD-01 through WORLD-05 in an integrated run. Check that the residents respond to interruptions or changes in the world. Collect first-use human evidence for WORLD-06. |

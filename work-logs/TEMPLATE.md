@@ -8,7 +8,7 @@ Use one record for each daily work period.
 - Window length:
 - Planned end time:
 - Goal and reason for priority:
-- Link to the short-term goal:
+- Goal IDs and links for the short-, mid-, and long-term goals:
 - Planned results:
 - Estimated time for work and checks:
 - Next useful step and its check:

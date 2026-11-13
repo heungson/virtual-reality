@@ -211,6 +211,12 @@ At closeout, check the count of dated completed work logs against the next revie
 
 The planning agent must review current evidence and the management report, set or revise both goals and their completion checks, and estimate the sessions needed to reach the ultimate goal. Record the remaining session budget, gaps, and the next threshold. If the forecast exceeds the remaining budget, report the gap and revise the plan. Stop opening new work sessions when the total limit is reached.
 
+## Rule 21: Track goals by stable ID
+
+Use GOALS.md for the active goals and goals/README.md for the goal register. Give each goal a stable ID, a parent, a status, and completion checks. Use the ID in session plans, assessments, and planning reports.
+
+When a goal changes, update its record and link the dated evidence for the decision. Keep the ID for estimate or check changes that preserve the intended result. If the intended result changes, record the old goal as superseded and link its replacement. Keep completed and superseded records available by ID.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
