@@ -165,6 +165,14 @@ The agent that communicates with the user coordinates the teams and verifies the
 
 Use the smallest team structure that fits the work and available compute. Record roles and contributions in the work log. After the work, use the results and time spent on coordination to decide whether to keep or change the team structure.
 
+## Rule 16: Assess and improve team management
+
+The coordinator must assess both simulation quality under Rule 11 and how well it manages the teams. Use TEAM-PERFORMANCE.md for the assessment criteria. Good simulation results do not replace evidence of good team management.
+
+For each session with delegated work, record each team and member, their roles, assigned goal, expected result, and actual result. Link the evidence to the active short-, mid-, and long-term goals. Review performance at each goal review. Account for dependencies and changes in scope before judging a team or member.
+
+Use the assessment to select a specific improvement to team structure, task assignment, handoffs, or verification. Define how to check its effect. Review the criteria when they miss a problem or give an unclear result. Record what changed, why, and which version was used for each assessment.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.

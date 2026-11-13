@@ -23,6 +23,8 @@ Use one record for each daily work period.
 - Useful work that could fit in the remaining time, or reason none could fit:
 - Results achieved compared with the plan:
 - Verification results:
+- Team performance: Link goal revisions and record team and member IDs, roles, results, and evidence under TEAM-PERFORMANCE.md.
+- Coordinator assessment: Record coordination costs, the management change to try, and how to check its effect.
 - Test applications closed and closure check:
 - Change to improve time use in the next session and how to check it:
 - Incomplete work and cause:
