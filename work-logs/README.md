@@ -4,9 +4,9 @@
 
 - Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
-- Latest work record: [2026-11-14-0055.md](2026-11/2026-11-14-0055.md).
-- Next task: Verify mouse look in visible Edge. Fix and recheck any failure. If time permits after it passes, verify the full cup task with keyboard and mouse.
-- Last quota check: 70% of the weekly quota remained. The daily quota and exact token count were unknown. Check again before the next session.
+- Latest work record: [2026-11-14-0110.md](2026-11/2026-11-14-0110.md).
+- Next task: Prepare the first human assessment and run it if a participant is available.
+- Last quota check: 69% of the weekly quota remained. Daily quota and exact token count unknown.
 
 ## File structure
 

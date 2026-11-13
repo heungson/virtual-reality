@@ -6,9 +6,17 @@
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; background: #142027; color: #fff; font: 16px system-ui, sans-serif; }
-  main { max-width: 72rem; margin: auto; padding: 1.25rem; }
-  h1 { margin: 0; }
-  canvas { display: block; width: 100%; aspect-ratio: 16 / 9; background: #324550; border-radius: .5rem; }
+  main {
+    display: grid;
+    grid-template-rows: auto auto minmax(15rem, 1fr) auto auto;
+    gap: .75rem;
+    height: min(100dvh, 52rem);
+    max-width: 72rem;
+    margin: auto;
+    padding: 1.25rem;
+  }
+  h1, p { margin: 0; }
+  canvas { display: block; width: 100%; height: 100%; background: #324550; border-radius: .5rem; }
   canvas:focus-visible, button:focus-visible { outline: 3px solid #fbd36a; outline-offset: 3px; }
   .controls { display: flex; align-items: center; gap: 1rem; }
   button { padding: .6rem 1rem; border: 0; border-radius: .35rem; background: #fbd36a; color: #182128; font: inherit; }
