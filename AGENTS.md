@@ -69,6 +69,8 @@ Before closing the record, compare actual time with the estimate. Record the ela
 
 Before starting, record the next useful step and how to verify it. If the plan depends on a person, tool, or other condition outside the agent's control, also record a fallback that can proceed without it. Estimate the time for the fallback and its checks.
 
+When a session ends with substantial time unused, record one specific change to improve time use in the next session. Name the additional result and its check, or explain why a shorter window is better. Compare the next session's result with this plan.
+
 If the goal is complete early or a required condition is unavailable, check the remaining time and quota. Start the next useful step or fallback if it can be completed and checked before the deadline. Before ending early, record the work considered and the specific reason it could not proceed. Use the assessment to set the next window, goal, and checks.
 
 If the goal was completed within the window, choose either a shorter window for the same amount of work or the same window for more work. Increase work only when available token data supports it. If token data is unknown, do not assume that more work is affordable; prefer a shorter window for the same amount of work.
@@ -138,6 +140,10 @@ Improve how the simulation gets feedback from voluntary user behavior without as
 Assess the current simulation before choosing a quality improvement. Give priority to the issue that most affects the project goal. After the change, repeat the affected checks and compare the results. Keep checks for behavior that must continue to work.
 
 Review the criteria when a check misses a defect or the simulation gains a new feature. Record why each criterion changes. Preserve the basis for comparing results over time.
+
+## Rule 12: Close test applications after verification
+
+Track the applications, browser windows and tabs, and background processes opened for testing. Include those opened by subagents. When verification ends, close them and check that they are closed. Close only the instances or tabs opened for the test. Record the closure check and any cleanup that could not be completed in the work log.
 
 ## Work log management
 

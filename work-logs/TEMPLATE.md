@@ -22,6 +22,8 @@ Use one record for each daily work period.
 - Useful work that could fit in the remaining time, or reason none could fit:
 - Results achieved compared with the plan:
 - Verification results:
+- Test applications closed and closure check:
+- Change to improve time use in the next session and how to check it:
 - Incomplete work and cause:
 - Token usage and remaining allowance, or unknown:
 - Next window length:
