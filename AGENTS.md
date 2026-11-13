@@ -105,9 +105,15 @@ The AI agent can assign tasks to multiple subagents and run them in parallel wit
 
 Give each subagent a clear goal, scope, verification method, and deadline. All subagents must follow the project rules and stay inside the project directory.
 
-Assign separate file ownership when subagents edit files. Coordinate shared changes to prevent conflicting edits. The main agent must review and combine the results, run the required checks, and record each subagent's contribution in the work period record.
+Assign separate file ownership when subagents edit files. Coordinate shared changes to prevent conflicting edits. Assign any code integration or review to a subagent. The main agent must verify the combined result under Rule 9 and record each subagent's contribution in the work period record.
 
 Subagent work shares the same work window and token allowance. Reserve time to combine and verify results before the window closes. Use fewer subagents when coordination or token costs exceed the expected benefit.
+
+## Rule 9: Assign all code work to subagents
+
+Only subagents can read or write code. Assign all code inspection, review, implementation, and changes to subagents. The agent that communicates with the user must not read or write code, including code in diffs.
+
+The agent that communicates with the user verifies the result. Use observable behavior, test results, and reports from subagents to check the completion conditions. If a check requires reading or changing code, assign it to a subagent and verify the reported result.
 
 ## Work log management
 
