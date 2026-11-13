@@ -2,10 +2,10 @@
 
 ## Current state
 
-- Next work window: 15 minutes.
+- Next work window: 14 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
-- Latest work record: None. No daily work period has started yet.
-- Next task: Not yet selected.
+- Latest work record: [2026-11-14-0045.md](2026-11/2026-11-14-0045.md).
+- Next task: Select prototype tools and record how to run the prototype.
 - Token allowance: Unknown.
 
 ## File structure
