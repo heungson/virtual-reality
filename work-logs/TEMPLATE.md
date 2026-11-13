@@ -15,6 +15,9 @@ Use one record for each daily work period.
 - Actual end time:
 - Elapsed time:
 - Actual time compared with the estimate and window:
+- Unused time and percentage of the window used:
+- Assessment of time use and reason for ending:
+- Useful work that could fit in the remaining time, or reason none could fit:
 - Results achieved compared with the plan:
 - Verification results:
 - Incomplete work and cause:
