@@ -36,8 +36,10 @@ Open `prototype/index.html` in a desktop browser. The prototype uses HTML, JavaS
 2. Use W, A, S, and D to walk.
 3. Move close to the cup and face it. Press E to pick it up.
 4. Move close to the yellow stand and face it. Press E to put the cup on it. The status below the room reports completion.
-   To release the cup freely, press R while holding it. It settles on the table, stand, or floor one meter ahead. Move within reach and press E to pick it up again.
+   To release the cup freely, press R while holding it. It settles on the surface one meter ahead. Move within reach and press E to pick it up again.
 5. Press Esc to release the mouse. Select **Reset room** to start again.
+
+Walk around the table and through the doorway in the back wall to reach the second room. You can carry the cup through the doorway, release it onto the counter or floor, and return to pick it up later.
 
 ## Decisions still required
 

@@ -85,9 +85,32 @@ try {
     await request('Input.dispatchKeyEvent', { type: 'keyUp', code, key, windowsVirtualKeyCode });
   }
 
-  async function pose(x, z) {
+  async function pose(x, z, yaw = 0) {
     // Position deterministically. Test the actual interaction key path.
-    await evaluate(`Object.assign(player, { x: ${x}, z: ${z}, yaw: 0 }); document.querySelector('#room').focus();`);
+    await evaluate(`Object.assign(player, { x: ${x}, z: ${z}, yaw: ${yaw} }); document.querySelector('#room').focus();`);
+  }
+
+  async function walkUntil(condition) {
+    await request('Input.dispatchKeyEvent', { type: 'keyDown', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+    try {
+      for (let attempt = 0; attempt < 30; attempt += 1) {
+        if (await evaluate(condition)) return;
+        await wait(50);
+      }
+      assert.fail(`Walking did not reach the expected position: ${condition}`);
+    } finally {
+      await request('Input.dispatchKeyEvent', { type: 'keyUp', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+    }
+  }
+
+  async function walkAgainstWall() {
+    await request('Input.dispatchKeyEvent', { type: 'keyDown', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+    try {
+      await wait(450);
+      assert(await evaluate('player.z < 6.4'), 'Divider blocks walking outside doorway');
+    } finally {
+      await request('Input.dispatchKeyEvent', { type: 'keyUp', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+    }
   }
 
   async function reset() {
@@ -113,6 +136,8 @@ try {
     await reset();
     await press('E');
     await expectStatus(/you have the cup/i);
+    await pose(-2, 6);
+    await walkAgainstWall();
     await pose(x, z);
     await press('R');
     await expectStatus(result);
@@ -132,6 +157,31 @@ try {
   await expectStatus(/task complete.*yellow stand/i);
   await reset();
   console.log('PASS: original cup task and Reset');
+  if (process.argv.includes('--connected')) {
+    await press('E');
+    await expectStatus(/you have the cup/i);
+    await pose(0, 6);
+    await walkUntil('player.z > 6.8');
+    await pose(1.5, 8.7);
+    await press('R');
+    await expectStatus(/on the counter/i);
+    await pose(0, 6.8, Math.PI);
+    await walkUntil('player.z < 6');
+    await pose(0, 6);
+    await walkUntil('player.z > 6.8');
+    await pose(1.5, 8.7);
+    await press('E');
+    await expectStatus(/you have the cup/i);
+    await pose(0, 8);
+    await press('R');
+    await expectStatus(/on the floor/i);
+    await press('E');
+    await expectStatus(/you have the cup/i);
+    await evaluate('document.querySelector("#reset").click()');
+    assert(await evaluate('Math.abs(player.z - 1.1) < 0.01'), 'Reset returns player to the first room');
+    await reset();
+    console.log('PASS: doorway crossing, carrying, counter persistence, second-room floor pickup, and Reset');
+  }
   await request('Emulation.setDeviceMetricsOverride', {
     width: 800, height: 480, deviceScaleFactor: 1, mobile: false,
   });

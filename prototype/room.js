@@ -6,12 +6,14 @@ const status = document.querySelector('#status');
 const pressed = new Set();
 const table = { x: 0, z: 4.1, width: 1.8, depth: 0.85, top: 0.9 };
 const stand = { x: 1.9, z: 4.4, width: 0.65, depth: 0.65, top: 0.8 };
-const floor = { top: 0 };
-const supports = [table, stand];
+const counter = { x: 1.5, z: 9.7, width: 1.3, depth: 0.8, top: 0.95, name: 'counter' };
+const floor = { top: 0, name: 'floor' };
+const supports = [table, stand, counter];
 const reach = 1.35;
 const radius = 0.19;
 const releaseDistance = 1;
-const room = { left: -3.2, right: 3.2, front: 0, back: 6.4, height: 3.1 };
+const room = { left: -3.2, right: 3.2, front: 0, back: 12.8, height: 3.1 };
+const partition = { z: 6.4, opening: 0.9, openingHeight: 2.2 };
 let player;
 let cup;
 let taskComplete;
@@ -28,10 +30,18 @@ function resetRoom() {
 function isBlocked(x, z) {
   if (x < room.left + radius || x > room.right - radius ||
       z < room.front + radius || z > room.back - radius) return true;
+  if (Math.abs(z - partition.z) < radius && Math.abs(x) > partition.opening - radius) return true;
   return supports.some((object) => (
     Math.abs(x - object.x) < object.width / 2 + radius &&
     Math.abs(z - object.z) < object.depth / 2 + radius
   ));
+}
+
+function crossesWall(x, z) {
+  if ((player.z < partition.z) === (z < partition.z)) return false;
+  const fraction = (partition.z - player.z) / (z - player.z);
+  const crossingX = player.x + (x - player.x) * fraction;
+  return Math.abs(crossingX) > partition.opening;
 }
 
 function move(seconds) {
@@ -59,6 +69,10 @@ function useObject() {
   const x = target.x - player.x;
   const z = target.z - player.z;
   const distance = Math.hypot(x, z);
+  if (crossesWall(target.x, target.z)) {
+    status.textContent = `Go through the doorway to reach the ${targetName}.`;
+    return;
+  }
   if (distance > reach) {
     status.textContent = `Walk closer to the ${targetName}. Then press E again.`;
     return;
@@ -84,7 +98,7 @@ function releaseCup(x, z) {
   }, floor);
   cup = { x, z, support };
   taskComplete ||= support === stand;
-  const place = support === stand ? 'yellow stand' : support === table ? 'table' : 'floor';
+  const place = support === stand ? 'yellow stand' : support === table ? 'table' : support.name;
   const completion = taskComplete ? 'Task complete. ' : '';
   status.textContent = `${completion}The cup is on the ${place}.`;
 }
@@ -93,7 +107,8 @@ function releaseAhead() {
   const x = player.x + Math.sin(player.yaw) * releaseDistance;
   const z = player.z + Math.cos(player.yaw) * releaseDistance;
   if (x < room.left + radius || x > room.right - radius ||
-      z < room.front + radius || z > room.back - radius) {
+      z < room.front + radius || z > room.back - radius || crossesWall(x, z) ||
+      (Math.abs(z - partition.z) < radius && Math.abs(x) > partition.opening - radius)) {
     if (!cup) status.textContent = 'Face away from the wall. Then press R again.';
     return;
   }
@@ -133,6 +148,15 @@ function makeRoom() {
     surfaces.push(face([[left, 0.002, z], [right, 0.002, z], [right, 0.002, z + 0.012], [left, 0.002, z + 0.012]], '#6b574b'));
   }
   return surfaces;
+}
+
+function makePartition() {
+  const { z, opening, openingHeight } = partition;
+  const panel = (left, right, bottom) => face(
+    [[left, bottom, z], [right, bottom, z], [right, room.height, z], [left, room.height, z]], '#9c9f89',
+  );
+  return [panel(room.left, -opening, 0), panel(opening, room.right, 0),
+    panel(-opening, opening, openingHeight)];
 }
 
 function makeFurniture() {
@@ -213,6 +237,9 @@ function paint(faces, sort = false) {
 }
 
 const surfaces = makeRoom();
+const divider = makePartition();
+const kitchen = box(counter.x, 0, counter.z, counter.width, counter.top, counter.depth,
+  ['#586756', '#687b62', '#b0b18e']);
 const furniture = makeFurniture();
 
 function frame(time) {
@@ -228,7 +255,13 @@ function frame(time) {
   context.fillStyle = '#a7b5ac';
   context.fillRect(0, 0, width, height);
   paint(surfaces);
-  paint(cup ? [...furniture, ...makeCup(cup.x, cup.support.top, cup.z)] : furniture, true);
+  const cupFaces = cup ? makeCup(cup.x, cup.support.top, cup.z) : [];
+  const firstRoom = cup && cup.z < partition.z ? [...furniture, ...cupFaces] : furniture;
+  const secondRoom = cup && cup.z >= partition.z ? [...kitchen, ...cupFaces] : kitchen;
+  const inFirstRoom = player.z < partition.z;
+  paint(inFirstRoom ? secondRoom : firstRoom, true);
+  paint(divider);
+  paint(inFirstRoom ? firstRoom : secondRoom, true);
   if (!cup) {
     const sin = Math.sin(player.yaw);
     const cos = Math.cos(player.yaw);
