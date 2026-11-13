@@ -117,6 +117,20 @@ Only subagents can read or write code. Assign all code inspection, review, imple
 
 The agent that communicates with the user verifies the result. Use observable behavior, test results, and reports from subagents to check the completion conditions. If a check requires reading or changing code, assign it to a subagent and verify the reported result.
 
+## Rule 10: Respect compute limits
+
+Compute resources are limited. Before work that uses significant compute, check the available quota, time, and applicable CPU, memory, GPU, or storage limits. Record unknown limits as unknown.
+
+Use the smallest workload that can produce and verify the required result. Limit parallel work to tasks that benefit from it. Reuse valid results and stop processes that are no longer necessary. If work approaches a limit, reduce the scope or defer the remaining work. Record any limit that affects the result.
+
+## Rule 11: Assess and improve simulation quality
+
+Use QUALITY.md to maintain the current assessment criteria and the latest quality assessment. Give each criterion an observable check and a condition for success. Record the result, the evidence, and any limits of the check.
+
+Assess the current simulation before choosing a quality improvement. Give priority to the issue that most affects the project goal. After the change, repeat the affected checks and compare the results. Keep checks for behavior that must continue to work.
+
+Review the criteria when a check misses a defect or the simulation gains a new feature. Record why each criterion changes. Preserve the basis for comparing results over time.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
