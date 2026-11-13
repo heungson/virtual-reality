@@ -2,6 +2,8 @@
 
 Use these criteria for the current desktop prototype. See README.md for the first version completion checks.
 
+Assess the room from the perspective of a person who is familiar with an ordinary room and has never used this simulation. Check whether the person can identify the table, cup, and stand, understand the controls, and predict what happens when they walk, reach for the cup, or put it down.
+
 | Criterion | Condition for success | Latest result |
 | --- | --- | --- |
 | Room load | Open the documented entry point. The room, table, cup, and stand are visible. | Passed in headless Edge. |
@@ -13,3 +15,5 @@ Use these criteria for the current desktop prototype. See README.md for the firs
 | Reset | Reset after placement. The player and cup return to their initial positions and the task is incomplete. | Passed in headless Edge. |
 
 Baseline evidence is in [the prototype work record](work-logs/2026-11/2026-11-14-0055.md). The next quality check is mouse look in visible Edge. If it passes, check the full cup task with keyboard and mouse.
+
+The baseline comes from browser checks and agent observation of screenshots. A human assessment of the experience remains unverified.
