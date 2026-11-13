@@ -153,9 +153,9 @@ Before creating or changing a recurring record, consider how it will work after 
 
 ## Rule 14: Plan across three session ranges
 
-Maintain active goals for the next 100 sessions, the next 10 sessions, and the next 2 to 3 sessions at the same time. Keep the current goals in GOALS.md. Give each goal a completion condition and link it to the next longer goal or the ultimate goal. Link the next work session to a short-term goal.
+Maintain short-, mid-, and long-term goals at the same time. Use about 2 to 3, 10, and 100 sessions as initial planning estimates. Adjust each estimate as the work, evidence, and available resources change. Keep the current goals and estimates in GOALS.md. Give each goal a completion condition and link it to the next longer goal or the ultimate goal. Link the next work session to a short-term goal.
 
-Review all three goals before choosing a session task and after checking the results. Use current progress, quality evidence, time, and compute limits to decide whether to revise them. Record what changed and why in the work log. Keep completed goals and past revisions available through the work logs and Git history. Preserve the original ultimate goal under Rule 5.
+Review all three goals before choosing a session task and after checking the results. Use current progress, quality evidence, time, and compute limits to decide whether to revise the goals or their estimates. Use the completion conditions to decide when a goal is complete. Record what changed and why in the work log. Keep completed goals and past revisions available through the work logs and Git history. Preserve the original ultimate goal under Rule 5.
 
 ## Work log management
 

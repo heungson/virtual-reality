@@ -2,7 +2,9 @@
 
 The agent set these initial planning goals on 2026-11-14 under Rule 5. The [ultimate goal](README.md#ultimate-goal) guides all three. Use the [quality criteria](quality/CRITERIA.md) to check progress.
 
-| Planning range | Goal | Completion condition |
+The session counts below are current estimates. Revise them when progress or available resources change. Use the completion conditions to assess the results.
+
+| Planning range and estimate | Goal | Completion condition |
 | --- | --- | --- |
 | Long term, 100 sessions | Simulate a small connected setting where people can carry out familiar activities and interact with a simulated person. | Verify that object behavior is consistent across places, that changes persist when the user returns, and that a simulated person can respond to an interruption in a familiar routine. Assess a first-time human user's experience when a participant is available. |
 | Mid term, 10 sessions | Build and verify two connected spaces for an everyday activity. This supports the long-term goal by testing shared rules across places. | Carry the cup between the spaces. Release and pick it up in each space. Return and confirm that the changes persist. Verify the original cup task and reset. |
