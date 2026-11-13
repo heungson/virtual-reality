@@ -2,11 +2,11 @@
 
 ## Current state
 
-- Next work window: 14 minutes.
+- Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
 - Latest work record: [2026-11-14-0045.md](2026-11/2026-11-14-0045.md).
-- Next task: Select prototype tools and record how to run the prototype.
-- Token allowance: Unknown.
+- Next task: Select prototype tools and run a basic 3D room. Verify that the room loads and document how to run it.
+- Last quota check: 70% of the weekly quota remained. The daily quota and exact token count were unknown. Check again before the next session.
 
 ## File structure
 

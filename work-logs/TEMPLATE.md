@@ -9,10 +9,12 @@ Use one record for each daily work period.
 - Planned end time:
 - Goal and reason for priority:
 - Planned results:
+- Estimated time for work and checks:
 - Verification method and completion conditions:
 - Available daily and weekly token allowance, or unknown:
 - Actual end time:
 - Elapsed time:
+- Actual time compared with the estimate and window:
 - Results achieved compared with the plan:
 - Verification results:
 - Incomplete work and cause:

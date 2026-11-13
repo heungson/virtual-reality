@@ -46,7 +46,8 @@ Before each work period:
 1. Record the start date and time in Korea Standard Time, the window length, and the planned end time in a new record under work-logs/.
 2. Select the task with the greatest impact under Rule 3. Choose an amount of work that can be completed and checked within the window.
 3. Record the goal, planned results, and verification method under Rule 2.
-4. Check the available daily and weekly token limits and remaining allowance. Use available usage data or data supplied by the user. If this data is unavailable, record it as unknown. Do not invent a token balance.
+4. Run `node tools/codex-limits.mjs` to check the available quota windows. Record the remaining percentages and reset times. If a window or exact token count is unavailable, record it as unknown.
+5. Estimate the time for the task and its checks. Compare the estimate with the window and the available quota. If the task is likely to finish much earlier, add a useful result or list the next useful step to do if time and quota permit. Reserve time for checks and the work record.
 
 During each work period:
 
@@ -63,6 +64,8 @@ At the end of each work period, record:
 - The next window length, planned amount of work, and reason for any change.
 
 Adjust the next work period in small steps based on the results. Use a one-minute step for time changes unless the work record gives a reason for a different step.
+
+Compare actual time with the estimate and the available window. If the goal was complete much earlier than planned, check the quota before changing the window. When quota permits, keep the window and plan a larger result with its own checks.
 
 If the goal was completed within the window, choose either a shorter window for the same amount of work or the same window for more work. Increase work only when available token data supports it. If token data is unknown, do not assume that more work is affordable; prefer a shorter window for the same amount of work.
 
