@@ -25,6 +25,7 @@ Use one record for each daily work period.
 - Verification results:
 - Team performance: Link goal revisions and record team and member IDs, roles, results, and evidence under TEAM-PERFORMANCE.md.
 - Coordinator assessment: Record coordination costs, the management change to try, and how to check its effect.
+- Team instructions: Record role cards and Git revision used. Record any instruction change, its evidence, the next comparable check, and the result of any prior change under review.
 - Test applications closed and closure check:
 - Change to improve time use in the next session and how to check it:
 - Incomplete work and cause:

@@ -181,6 +181,14 @@ The coordinator can form a management team and delegate management of teams and 
 
 Any team member can report a proposed improvement to the coordinator, regardless of role. Describe the problem, the proposed change, and how to check its effect. The coordinator evaluates the proposal and records any change adopted and its reason.
 
+## Rule 18: Maintain and improve team instructions
+
+Keep current team instructions in the teams/ directory. Use teams/README.md to find each team's instructions and role cards. Apply the project rules first, then the team instructions, then the current assignment. At handoff, give each member the applicable documents and record their Git revision in the work log.
+
+After each delegated session, review the instructions against the results and member proposals. If an instruction contributed to a defect, delay, or repeated clarification, identify the cause and revise the applicable instruction. Record the evidence, change, expected effect, and check for the next comparable session. Check the effect and decide whether to keep, revise, or revert the change. If no change is needed, record that decision.
+
+Keep current instructions short. Use dated work records for improvement evidence and Git for past versions. Follow Rule 13 if the volume makes retrieval slow.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
