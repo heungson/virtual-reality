@@ -173,6 +173,14 @@ For each session with delegated work, record each team and member, their roles, 
 
 Use the assessment to select a specific improvement to team structure, task assignment, handoffs, or verification. Define how to check its effect. Review the criteria when they miss a problem or give an unclear result. Record what changed, why, and which version was used for each assessment.
 
+## Rule 17: Share tools and improve how teams work
+
+Members and teams can create tools for their own work and share them with other members and teams. Keep shared tools inside the project directory. Document what each tool does, how to use and verify it, and who maintains it. Follow Rule 9 for code work.
+
+The coordinator can form a management team and delegate management of teams and members to it. Its goal is to improve the work efficiency of all teams within the available time and compute. Use the measures in TEAM-PERFORMANCE.md to check whether changes improve accepted results, handoffs, rework, or coordination time. The management team can provide tools to other teams and communicate with the coordinator or other teams when necessary. The coordinator verifies the combined result.
+
+Any team member can report a proposed improvement to the coordinator, regardless of role. Describe the problem, the proposed change, and how to check its effect. The coordinator evaluates the proposal and records any change adopted and its reason.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
