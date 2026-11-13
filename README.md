@@ -22,9 +22,18 @@ The first version is complete when these checks pass:
 
 The agent selected this scope during the first work session. The cup task gives the project a small test of how human actions change the state of a simulated world.
 
+## Run the prototype
+
+Open `prototype/index.html` in a desktop browser. The prototype uses HTML, JavaScript, and Canvas 2D to draw the 3D room. It needs no server or package installation.
+
+1. Click the room to focus it and enable mouse look. You can also use Tab to focus the room and the arrow keys to look.
+2. Use W, A, S, and D to walk.
+3. Move close to the cup and face it. Press E to pick it up.
+4. Move close to the yellow stand and face it. Press E to put the cup on it. The status below the room reports completion.
+5. Press Esc to release the mouse. Select **Reset room** to start again.
+
 ## Decisions still required
 
-- Select the tools for the first prototype and record how to run it.
 - Set device and resource limits before adding headset support or more simulation features.
 
 ## Check Codex CLI usage limits

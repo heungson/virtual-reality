@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cup Room | VirtualReality</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #142027; color: #fff; font: 16px system-ui, sans-serif; }
+  main { max-width: 72rem; margin: auto; padding: 1.25rem; }
+  h1 { margin: 0; }
+  canvas { display: block; width: 100%; aspect-ratio: 16 / 9; background: #324550; border-radius: .5rem; }
+  canvas:focus-visible, button:focus-visible { outline: 3px solid #fbd36a; outline-offset: 3px; }
+  .controls { display: flex; align-items: center; gap: 1rem; }
+  button { padding: .6rem 1rem; border: 0; border-radius: .35rem; background: #fbd36a; color: #182128; font: inherit; }
+</style>
+<main>
+  <h1>Cup Room</h1>
+  <p>Walk to the table. Pick up the cup and put it on the yellow stand.</p>
+  <canvas id="room" tabindex="0" aria-label="3D room view" aria-describedby="controls"></canvas>
+  <p id="controls">Click the room to look with the mouse. Use W, A, S, D to walk. Use the arrow keys to look. Press E to use an object. Press Esc to release the mouse.</p>
+  <div class="controls">
+    <button id="reset" type="button">Reset room</button>
+    <p id="status" role="status">The cup is on the table.</p>
+  </div>
+</main>
+<script src="room.js"></script>
+</html>

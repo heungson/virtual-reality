@@ -4,8 +4,8 @@
 
 - Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
-- Latest work record: [2026-11-14-0045.md](2026-11/2026-11-14-0045.md).
-- Next task: Select prototype tools and run a basic 3D room. Verify that the room loads and document how to run it.
+- Latest work record: [2026-11-14-0055.md](2026-11/2026-11-14-0055.md).
+- Next task: Verify mouse look in a visible browser and improve the controls if needed.
 - Last quota check: 70% of the weekly quota remained. The daily quota and exact token count were unknown. Check again before the next session.
 
 ## File structure
