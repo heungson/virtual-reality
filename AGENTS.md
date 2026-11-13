@@ -133,6 +133,8 @@ Assess quality from the perspective of a typical human user. For each scenario, 
 
 Include how much longer human users want to stay when the required part of the session ends. Record the additional time they say they want, including zero, and their reasons if they give them. If users can choose to stay longer, record that time separately. Treat the result as one part of quality. Mark it as unverified until human users take part.
 
+Improve how the simulation gets feedback from voluntary user behavior without asking users for feedback. Use observable actions such as choosing to stay, exploring, restarting, or leaving. Explain what is measured and respect the user's choice to take part. Collect only the information needed for the assessment. Record what each action could indicate and other possible causes. Keep observed behavior separate from comments users volunteer. Check that changes to feedback collection preserve the user's ability to leave freely.
+
 Assess the current simulation before choosing a quality improvement. Give priority to the issue that most affects the project goal. After the change, repeat the affected checks and compare the results. Keep checks for behavior that must continue to work.
 
 Review the criteria when a check misses a defect or the simulation gains a new feature. Record why each criterion changes. Preserve the basis for comparing results over time.
