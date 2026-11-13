@@ -10,6 +10,7 @@ Assess the room from the perspective of a person who is familiar with an ordinar
 | Movement and keyboard look | Use the documented keys. The view moves and turns as commanded. | Passed in headless Edge. |
 | Mouse look | Click the room in visible Edge. Move the mouse. The view turns. Press Esc to release the pointer. | Passed with browser automation in visible Edge 157. |
 | Controls and status visibility | At desktop viewport sizes 800 × 480, 960 × 640, and 1280 × 720, the room, instructions, task status, and Reset button are visible without scrolling. | Passed with browser automation in visible Edge 157. |
+| Keyboard access in a narrow viewport | Tab to the room, trigger a recovery message, tab to Reset, and press Enter. The focus outline is visible and there is no horizontal scrolling. | Passed in Edge at a 400 × 240 CSS viewport with 2× display scale. Native 200% browser zoom remains unverified. |
 | Collision | Walk into a wall and the table. The player cannot pass through either. | Passed in headless Edge. |
 | Cup pickup | Try from far away, then within reach. The cup stays on the table on the first attempt and moves with the player on the second. | Passed in headless Edge. |
 | Cup placement | Put the cup on the stand and walk away. The cup stays on the stand and the completion status remains visible. | Passed in headless Edge. |

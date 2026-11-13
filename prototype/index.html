@@ -20,6 +20,10 @@
   canvas:focus-visible, button:focus-visible { outline: 3px solid #fbd36a; outline-offset: 3px; }
   .controls { display: flex; align-items: center; gap: 1rem; }
   button { padding: .6rem 1rem; border: 0; border-radius: .35rem; background: #fbd36a; color: #182128; font: inherit; }
+  @media (max-width: 30rem) {
+    main { height: auto; }
+    .controls { flex-wrap: wrap; }
+  }
 </style>
 <main>
   <h1>Cup Room</h1>
