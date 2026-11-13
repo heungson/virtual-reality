@@ -51,11 +51,16 @@ function look(yaw, pitch) {
 function useObject() {
   if (cup === 'stand') return;
   const target = cup === 'table' ? table : stand;
+  const targetName = cup === 'table' ? 'cup' : 'yellow stand';
   const x = target.x - player.x;
   const z = target.z - player.z;
   const distance = Math.hypot(x, z);
-  if (distance > reach || x * Math.sin(player.yaw) + z * Math.cos(player.yaw) < distance * 0.5) {
-    status.textContent = cup === 'table' ? 'Move closer and face the cup.' : 'Move closer and face the yellow stand.';
+  if (distance > reach) {
+    status.textContent = `Walk closer to the ${targetName}. Then press E again.`;
+    return;
+  }
+  if (x * Math.sin(player.yaw) + z * Math.cos(player.yaw) < distance * 0.5) {
+    status.textContent = `Turn to face the ${targetName}. Then press E again.`;
     return;
   }
   cup = cup === 'table' ? 'held' : 'stand';

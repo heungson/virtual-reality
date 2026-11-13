@@ -13,6 +13,7 @@ Assess the room from the perspective of a person who is familiar with an ordinar
 | Collision | Walk into a wall and the table. The player cannot pass through either. | Passed in headless Edge. |
 | Cup pickup | Try from far away, then within reach. The cup stays on the table on the first attempt and moves with the player on the second. | Passed in headless Edge. |
 | Cup placement | Put the cup on the stand and walk away. The cup stays on the stand and the completion status remains visible. | Passed in headless Edge. |
+| Recovery after a failed action | Try pickup and placement from too far away, then while facing away within reach. The message identifies the correction and tells the user which key to press again. | All four cases passed in an automated rehearsal in visible Edge. |
 | Reset | Reset after placement. The player and cup return to their initial positions and the task is incomplete. | Passed in headless Edge. |
 | Willingness to stay | After the cup task, let first-time human users continue or leave. Record voluntary active time, including zero, separately from any time or reasons they volunteer. Use the first human assessment as a baseline. Compare later results under similar conditions. | Unverified. No human session data. |
 
@@ -21,6 +22,8 @@ Baseline evidence is in [the prototype work record](work-logs/2026-11/2026-11-14
 The baseline comes from browser checks and agent observation of screenshots. A human assessment of the experience remains unverified.
 
 ## First human assessment
+
+Use the [human assessment record](HUMAN-ASSESSMENT.md).
 
 Use a desktop browser with a keyboard and mouse. Give the participant this task: put the cup on the yellow stand. Let the participant use the instructions on the page. Record any help the participant needs.
 

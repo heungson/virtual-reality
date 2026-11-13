@@ -4,8 +4,8 @@
 
 - Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
-- Latest work record: [2026-11-14-0110.md](2026-11/2026-11-14-0110.md).
-- Next task: Prepare a record for the first human assessment. Run the assessment if a participant is available. Otherwise, rehearse the procedure in visible Edge. Check that the record captures task completion, help needed, stated extra time, and actual optional time. Check whether the instructions and feedback explain what to do after an unsuccessful pickup or placement. If time permits, fix and verify the most important issue found. Record rehearsal results separately from human evidence.
+- Latest work record: [2026-11-14-0118.md](2026-11/2026-11-14-0118.md).
+- Next task: Run the first human assessment if a participant is available. Otherwise, check first-use instructions at the smallest tested viewport and improve any verified issue.
 - Last quota check: 69% of the weekly quota remained. Daily quota and exact token count unknown.
 
 ## File structure
