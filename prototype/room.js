@@ -6,16 +6,21 @@ const status = document.querySelector('#status');
 const pressed = new Set();
 const table = { x: 0, z: 4.1, width: 1.8, depth: 0.85, top: 0.9 };
 const stand = { x: 1.9, z: 4.4, width: 0.65, depth: 0.65, top: 0.8 };
+const floor = { top: 0 };
+const supports = [table, stand];
 const reach = 1.35;
 const radius = 0.19;
+const releaseDistance = 1;
 const room = { left: -3.2, right: 3.2, front: 0, back: 6.4, height: 3.1 };
 let player;
 let cup;
+let taskComplete;
 let lastFrame;
 
 function resetRoom() {
   player = { x: 0, z: 1.1, yaw: 0, pitch: -0.12 };
-  cup = 'table';
+  cup = { x: table.x, z: table.z, support: table };
+  taskComplete = false;
   pressed.clear();
   status.textContent = 'The cup is on the table.';
 }
@@ -23,7 +28,7 @@ function resetRoom() {
 function isBlocked(x, z) {
   if (x < room.left + radius || x > room.right - radius ||
       z < room.front + radius || z > room.back - radius) return true;
-  return [table, stand].some((object) => (
+  return supports.some((object) => (
     Math.abs(x - object.x) < object.width / 2 + radius &&
     Math.abs(z - object.z) < object.depth / 2 + radius
   ));
@@ -49,9 +54,8 @@ function look(yaw, pitch) {
 }
 
 function useObject() {
-  if (cup === 'stand') return;
-  const target = cup === 'table' ? table : stand;
-  const targetName = cup === 'table' ? 'cup' : 'yellow stand';
+  const target = cup ?? stand;
+  const targetName = cup ? 'cup' : 'yellow stand';
   const x = target.x - player.x;
   const z = target.z - player.z;
   const distance = Math.hypot(x, z);
@@ -63,10 +67,37 @@ function useObject() {
     status.textContent = `Turn to face the ${targetName}. Then press E again.`;
     return;
   }
-  cup = cup === 'table' ? 'held' : 'stand';
-  status.textContent = cup === 'held'
-    ? 'You have the cup. Take it to the yellow stand.'
-    : 'Task complete. The cup is on the yellow stand.';
+  if (cup) {
+    cup = null;
+    status.textContent = 'You have the cup. Press R to release it.';
+  } else {
+    releaseCup(stand.x, stand.z);
+  }
+}
+
+function releaseCup(x, z) {
+  if (cup) return;
+  const support = supports.reduce((highest, surface) => {
+    const containsPoint = Math.abs(x - surface.x) <= surface.width / 2 &&
+      Math.abs(z - surface.z) <= surface.depth / 2;
+    return containsPoint && surface.top > highest.top ? surface : highest;
+  }, floor);
+  cup = { x, z, support };
+  taskComplete ||= support === stand;
+  const place = support === stand ? 'yellow stand' : support === table ? 'table' : 'floor';
+  const completion = taskComplete ? 'Task complete. ' : '';
+  status.textContent = `${completion}The cup is on the ${place}.`;
+}
+
+function releaseAhead() {
+  const x = player.x + Math.sin(player.yaw) * releaseDistance;
+  const z = player.z + Math.cos(player.yaw) * releaseDistance;
+  if (x < room.left + radius || x > room.right - radius ||
+      z < room.front + radius || z > room.back - radius) {
+    if (!cup) status.textContent = 'Face away from the wall. Then press R again.';
+    return;
+  }
+  releaseCup(x, z);
 }
 
 function face(points, color) {
@@ -197,9 +228,8 @@ function frame(time) {
   context.fillStyle = '#a7b5ac';
   context.fillRect(0, 0, width, height);
   paint(surfaces);
-  const support = cup === 'table' ? table : stand;
-  paint(cup === 'held' ? furniture : [...furniture, ...makeCup(support.x, support.top, support.z)], true);
-  if (cup === 'held') {
+  paint(cup ? [...furniture, ...makeCup(cup.x, cup.support.top, cup.z)] : furniture, true);
+  if (!cup) {
     const sin = Math.sin(player.yaw);
     const cos = Math.cos(player.yaw);
     paint(makeCup(player.x + 0.47 * sin + 0.18 * cos,
@@ -218,6 +248,8 @@ canvas.addEventListener('keydown', (event) => {
     pressed.add(event.code);
   } else if (event.code === 'KeyE' && !event.repeat) {
     useObject();
+  } else if (event.code === 'KeyR' && !event.repeat) {
+    releaseAhead();
   }
 });
 window.addEventListener('keyup', (event) => pressed.delete(event.code));
