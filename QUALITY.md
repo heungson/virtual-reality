@@ -13,6 +13,7 @@ Assess the room from the perspective of a person who is familiar with an ordinar
 | Cup pickup | Try from far away, then within reach. The cup stays on the table on the first attempt and moves with the player on the second. | Passed in headless Edge. |
 | Cup placement | Put the cup on the stand and walk away. The cup stays on the stand and the completion status remains visible. | Passed in headless Edge. |
 | Reset | Reset after placement. The player and cup return to their initial positions and the task is incomplete. | Passed in headless Edge. |
+| Willingness to stay | After the cup task, record how many additional minutes first-time human users want to stay, including zero. Record their reasons and any optional time they choose to spend. Use the first human assessment as a baseline. Compare later results under similar conditions. | Unverified. No human session data. |
 
 Baseline evidence is in [the prototype work record](work-logs/2026-11/2026-11-14-0055.md). The next quality check is mouse look in visible Edge. If it passes, check the full cup task with keyboard and mouse.
 

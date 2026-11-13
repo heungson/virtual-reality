@@ -129,6 +129,8 @@ Use QUALITY.md to maintain the current assessment criteria and the latest qualit
 
 Assess quality from the perspective of a typical human user. For each scenario, describe what a person with no prior knowledge of the simulation would expect to see, understand, and do. Compare the experience with ordinary human experience in a similar real setting. Record assumptions about the user. Identify which results come from human observation and which come from automated checks or agent judgment.
 
+Include how much longer human users want to stay when the required part of the session ends. Record the additional time they say they want, including zero, and their reasons if they give them. If users can choose to stay longer, record that time separately. Treat the result as one part of quality. Mark it as unverified until human users take part.
+
 Assess the current simulation before choosing a quality improvement. Give priority to the issue that most affects the project goal. After the change, repeat the affected checks and compare the results. Keep checks for behavior that must continue to work.
 
 Review the criteria when a check misses a defect or the simulation gains a new feature. Record why each criterion changes. Preserve the basis for comparing results over time.
