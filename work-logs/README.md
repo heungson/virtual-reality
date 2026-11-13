@@ -26,4 +26,6 @@ The agent can change this structure when a different method improves access or m
 
 ## Management changes
 
+- 2026-11-14: Added Rule 13. At 10,000 records, retain date-based paths and add a lookup by date and goal if locating records becomes slow. At 1,000,000 records, use an indexed archive if file lookup or repository updates become too costly. Preserve original dates, record IDs, and links. Compare record counts and check a sample of old links after migration. Keep this index as the entry point for current work.
+
 - 2026-11-14: Replaced the root WORK_LOG.md template with this folder, a separate template, and monthly record folders. This keeps each record small and lets the agent find recent results without reading the full history. No completed work records existed at the time of the change.

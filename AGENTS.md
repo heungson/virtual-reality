@@ -129,7 +129,7 @@ Use the smallest workload that can produce and verify the required result. Limit
 
 ## Rule 11: Assess and improve simulation quality
 
-Use QUALITY.md to maintain the current assessment criteria and the latest quality assessment. Give each criterion an observable check and a condition for success. Record the result, the evidence, and any limits of the check.
+Use QUALITY.md to find the criteria catalog and latest quality assessment. Give each criterion a stable ID, an observable check, and a condition for success. Keep dated evidence separate from the catalog. Record the tested build, criteria revision, results, and limits.
 
 Use the ultimate goal in README.md to define criteria for the simulated world. Link each simulation milestone to a gap in those criteria and specify the evidence that will show progress. Keep prototype regression checks separate. Record the reason for changes to the criteria or milestones.
 
@@ -146,6 +146,10 @@ Review the criteria when a check misses a defect or the simulation gains a new f
 ## Rule 12: Close test applications after verification
 
 Track the applications, browser windows and tabs, and background processes opened for testing. Include those opened by subagents. When verification ends, close them and check that they are closed. Close only the instances or tabs opened for the test. Record the closure check and any cleanup that could not be completed in the work log.
+
+## Rule 13: Plan for document growth
+
+Before creating or changing a recurring record, consider how it will work after 10,000 and 1,000,000 updates. Record how to find current information, add a record, find old evidence, and migrate without losing history. Keep current summaries small and use stable IDs for references. Group or index history so routine work does not require reading all records. Measure lookup and update costs before changing storage.
 
 ## Work log management
 
