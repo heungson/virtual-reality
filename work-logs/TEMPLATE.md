@@ -38,6 +38,9 @@ Use one record for each daily work period.
 
 ## Required closeout fields
 
+- Management report: Record reviewer, findings, evidence, proposed improvement, check, and coordinator decision.
+- Planning checkpoint: Record completed and started counts, remaining budget, and planning report if due.
+
 - Window seconds:
 - Elapsed seconds:
 - Unused seconds:

@@ -7,6 +7,8 @@ The delivery team currently has two subagent roles. The coordinator assigns work
 | Coordinator | [Delivery team instructions](DELIVERY.md#coordinator) |
 | Implementation member | [Implementation role](DELIVERY.md#implementation-member) |
 | Verification member | [Verification role](DELIVERY.md#verification-member) |
+| Management reviewer | [Management review](MANAGEMENT.md#work-log-reviewer) |
+| Goal planning agent | [Goal planning](MANAGEMENT.md#goal-planning-agent) |
 
 Before delegation, send the relevant role card and the current assignment. Include the goal, scope, completion checks, handoff, and deadline. Use the [team performance criteria](../TEAM-PERFORMANCE.md) and the [work record template](../work-logs/TEMPLATE.md).
 

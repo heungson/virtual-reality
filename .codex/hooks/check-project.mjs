@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { planningReview } from '../../tools/planning-review.mjs';
 
 function readProjectDocument(name) {
   try {
@@ -34,7 +35,19 @@ function stopDecision(input) {
     (closeout.stderr || closeout.error?.message || '').trim().slice(0, 500),
     'If this turn ran a work session, correct and recheck its closeout before ending. Otherwise, report the gate failure and leave historical evidence unchanged.',
   ].join(' ');
-  return { decision: 'block', reason: [instruction, gate, preview].filter(Boolean).join('\n') };
+  let planning = '';
+  try {
+    const { completed, threshold, due, remaining } = planningReview();
+    if (due) {
+      planning = `Planning review due: ${completed} completed sessions, threshold ${threshold}, ${remaining} sessions remaining under the 1000-session limit. Dispatch the planning subagent now to review the mid-term and long-term goals. Record its report and the next threshold before starting another session.`;
+    }
+    if (remaining === 0) {
+      planning += ' The session limit is reached. Do not start another session. Report whether the ultimate goal is verified.';
+    }
+  } catch (error) {
+    planning = `Cannot check the planning review threshold: ${error.message}`;
+  }
+  return { decision: 'block', reason: [instruction, gate, planning, preview].filter(Boolean).join('\n') };
 }
 
 const chunks = [];

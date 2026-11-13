@@ -19,6 +19,10 @@ Expect a PASS message for each group and confirmation that test Edge exited and 
 
 Run the closeout validator with the work record path before closing a session. Run it with the latest-record option before dispatching the next team.
 
+Use the dispatch check below before starting a new work session. It also checks the management report, the next planning review threshold, and the total session limit. If a review is due, assign the planning agent and record its report before running the check again.
+
+    node tools/verify-closeout.mjs --before-session
+
     node tools/verify-closeout.mjs --latest
 
 The repository Git hook rejects invalid staged session closeouts. It is active in this checkout. Activate it in a new checkout with:

@@ -43,7 +43,7 @@ The daily start time is 09:00 Korea Standard Time. The user can also request a s
 
 Before each work period:
 
-Run `node tools/verify-closeout.mjs --latest` before starting the next period. If the latest record fails, repair it with available evidence and run the check again. Do not begin a new session or dispatch its team until the check passes.
+Run `node tools/verify-closeout.mjs --before-session` before starting the next period. Resolve any invalid closeout or due planning review and run the check again. Do not begin a new session or dispatch its delivery team until the check passes.
 
 The Codex Stop hook requests a correction when the latest record fails. The Git pre-commit hook rejects staged session closeouts that fail validation. Keep both checks enabled. See tools/README.md for activation in a new checkout.
 
@@ -196,6 +196,20 @@ Keep current team instructions in the teams/ directory. Use teams/README.md to f
 After each delegated session, review the instructions against the results and member proposals. If an instruction contributed to a defect, delay, or repeated clarification, identify the cause and revise the applicable instruction. Record the evidence, change, expected effect, and check for the next comparable session. Check the effect and decide whether to keep, revise, or revert the change. If no change is needed, record that decision.
 
 Keep current instructions short. Use dated work records for improvement evidence and Git for past versions. Follow Rule 13 if the volume makes retrieval slow.
+
+## Rule 19: Review each completed session independently
+
+After each session ends, assign a management team member who did not perform the delivery work to assess its work log and report to the coordinator. Check evidence, time use, agent-minutes, handoffs, rework, cleanup, and progress against all active goals. Identify unsupported claims or missing data. Give one specific improvement or explain why none is needed. Specify how to check the improvement.
+
+The coordinator records the report, its disposition, and any corrections in the dated work log. Include the review in closeout and finish it before dispatching the next session. A validator pass does not replace this review.
+
+## Rule 20: Assign a goal planning agent at each mid-term threshold
+
+The goal planning agent owns the mid-term and long-term goals in GOALS.md. It must plan to achieve the original ultimate goal within 1,000 total work sessions. Count each started session toward the limit, including interrupted or incomplete sessions. Never change the ultimate goal or report it as achieved without evidence.
+
+At closeout, check the count of dated completed work logs against the next review threshold in GOALS.md. When the count reaches or exceeds the threshold, automatically invoke a planning subagent before starting another session. The threshold is an absolute completed-session count. Set the next threshold from the revised mid-term estimate and the remaining total session budget. Do not reset the count. A planning review done as part of closeout does not create a separate work session.
+
+The planning agent must review current evidence and the management report, set or revise both goals and their completion checks, and estimate the sessions needed to reach the ultimate goal. Record the remaining session budget, gaps, and the next threshold. If the forecast exceeds the remaining budget, report the gap and revise the plan. Stop opening new work sessions when the total limit is reached.
 
 ## Work log management
 

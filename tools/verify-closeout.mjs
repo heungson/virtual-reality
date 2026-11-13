@@ -1,9 +1,11 @@
 import { readFileSync, realpathSync } from 'node:fs';
-import { dirname, isAbsolute, relative, resolve, sep } from 'node:path';
+import { basename, dirname, isAbsolute, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
+import { planningReview } from './planning-review.mjs';
 
 const project = realpathSync(resolve(dirname(fileURLToPath(import.meta.url)), '..'));
+const lastLegacyRecord = '2026-11-14-0218.md';
 const labels = [
   'Status', 'Window seconds', 'Elapsed seconds', 'Unused seconds', 'Agent count', 'Agent-minutes',
   'Time use', 'Team evidence', 'Coordinator evidence', 'Next experiment', 'Cleanup', 'Goal review',
@@ -22,7 +24,16 @@ function verify(file) {
   if (!location || location === '..' || location.startsWith(`..${sep}`) || isAbsolute(location)) {
     throw new Error('Use a work log inside the project directory.');
   }
-  verifyText(readFileSync(path, 'utf8'));
+  const text = readFileSync(path, 'utf8');
+  verifyText(text);
+  if (basename(path) > lastLegacyRecord || /^- Management report:/m.test(text)) verifyManagementReport(text);
+}
+
+function verifyManagementReport(text) {
+  const reports = text.split(/\r?\n/).filter((line) => line.startsWith('- Management report:'));
+  if (reports.length !== 1 || !reports[0].slice('- Management report:'.length).trim()) {
+    throw new Error('Specify one nonempty Management report for a completed session.');
+  }
 }
 
 function verifyText(text) {
@@ -76,9 +87,11 @@ function verifyStaged() {
     } catch {
       // A newly added record has no previous version.
     }
-    if (completed.test(previous) && !/^- Window seconds:/m.test(previous)) continue;
+    const legacy = basename(path) <= lastLegacyRecord;
+    if (legacy && completed.test(previous) && !/^- Window seconds:/m.test(previous)) continue;
     try {
       verifyText(staged);
+      if (!legacy || !completed.test(previous) || /^- Management report:/m.test(previous)) verifyManagementReport(staged);
     } catch (error) {
       throw new Error(`${path}: ${error.message}`);
     }
@@ -86,8 +99,15 @@ function verifyStaged() {
 }
 
 try {
-  if (process.argv.length !== 3) throw new Error('Usage: node tools/verify-closeout.mjs <work-log.md|--latest|--staged>');
+  if (process.argv.length !== 3) throw new Error('Usage: node tools/verify-closeout.mjs <work-log.md|--latest|--staged|--before-session>');
   if (process.argv[2] === '--staged') verifyStaged();
+  else if (process.argv[2] === '--before-session') {
+    verify(latestRecord());
+    const { started, completed, threshold, due, remaining } = planningReview();
+    if (remaining === 0) throw new Error(`Session limit reached: ${started} started sessions. Do not start another session.`);
+    if (due) throw new Error(`Planning review due: ${completed} completed sessions reached threshold ${threshold}. Dispatch the planning subagent and record the next threshold before starting another session.`);
+    console.log(`Planning review is not due. ${remaining} sessions remain under the project limit.`);
+  }
   else verify(process.argv[2] === '--latest' ? latestRecord() : process.argv[2]);
   console.log('Closeout structure and arithmetic passed. Review prose and evidence separately.');
 } catch (error) {
