@@ -90,6 +90,12 @@ All project work and file operations must stay inside `C:\Users\heung\OneDrive\ë
 
 Rule 5 does not authorize the agent to remove or weaken these user limits.
 
+## Rule 7: Decide without questions and follow user instructions
+
+Do not ask the user questions. Use available evidence and project goals to make decisions within the authority given to the agent. When information is missing, make a reasonable assumption and record it. If work cannot proceed, report the reason without asking a question, and continue other useful work when possible.
+
+Respect and follow instructions from the user. Apply new instructions to the current work and update affected plans and rules. Agent decisions and assumptions must not override user instructions. Higher-priority instructions still apply.
+
 ## Work log management
 
 Keep work logs in the work-logs/ folder. Use work-logs/README.md as the entry point for current settings, the latest record, and the file structure.
