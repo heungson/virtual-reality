@@ -4,8 +4,8 @@
 
 - Next work window: 15 minutes.
 - Daily start time: 09:00 Korea Standard Time, or when the user asks.
-- Latest work record: [2026-11-14-0127.md](2026-11/2026-11-14-0127.md).
-- Next task: Start the short-term goal in [GOALS.md](../GOALS.md). Use a shared rule for releasing the cup onto the table, stand, or floor. Verify where it settles, pickup after release, and the existing cup task and reset. If the work cannot fit the window, define and verify the smallest part that can.
+- Latest work record: [2026-11-14-0218.md](2026-11/2026-11-14-0218.md).
+- Next task: Run the closeout gate, then assess first use of the two-room journey. Use the human procedure if a participant is available. Otherwise, record an agent rehearsal separately.
 - Last quota check: 69% of the weekly quota remained. Daily quota and exact token count unknown.
 
 ## File structure

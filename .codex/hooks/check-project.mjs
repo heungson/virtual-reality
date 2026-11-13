@@ -1,4 +1,6 @@
 import { readFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 function readProjectDocument(name) {
   try {
@@ -25,7 +27,14 @@ function stopDecision(input) {
     preview = `${error.message} Report any document you cannot review.`;
   }
 
-  return { decision: 'block', reason: `${instruction}\n${preview}` };
+  const validator = fileURLToPath(new URL('../../tools/verify-closeout.mjs', import.meta.url));
+  const closeout = spawnSync(process.execPath, [validator, '--latest'], { encoding: 'utf8', timeout: 3000 });
+  const gate = closeout.status === 0 ? '' : [
+    'The latest work log did not pass the closeout gate.',
+    (closeout.stderr || closeout.error?.message || '').trim().slice(0, 500),
+    'If this turn ran a work session, correct and recheck its closeout before ending. Otherwise, report the gate failure and leave historical evidence unchanged.',
+  ].join(' ');
+  return { decision: 'block', reason: [instruction, gate, preview].filter(Boolean).join('\n') };
 }
 
 const chunks = [];

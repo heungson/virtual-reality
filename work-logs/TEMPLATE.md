@@ -35,3 +35,17 @@ Use one record for each daily work period.
 - Next planned amount of work:
 - Reason for the next window and amount of work:
 - Review of the short-, mid-, and long-term goals and their session estimates. Record any changes and their reasons:
+
+## Required closeout fields
+
+- Window seconds:
+- Elapsed seconds:
+- Unused seconds:
+- Agent count:
+- Agent-minutes:
+- Time use:
+- Team evidence:
+- Coordinator evidence:
+- Next experiment:
+- Cleanup:
+- Goal review:

@@ -7,6 +7,7 @@ The team delivers one verified result for the current short-term goal. The coord
 - Give each member a result, scope, deadline, and completion check. Set file ownership and the handoff time. Record the revision of these instructions.
 - Assign code work to subagents. Verify the combined result through observable behavior and test evidence. Confirm test app closure before the session ends.
 - Compare actual handoffs and results with the plan. Check which instructions helped or caused delay or rework. Record any instruction change and how to assess it next time.
+- Require a ready-to-run command, expected results, dependencies, limits, and cleanup evidence at handoff. On the next stable-build audit, measure time from handoff to first run and count requests for clarification and retries.
 
 ## Implementation member
 

@@ -43,6 +43,10 @@ The daily start time is 09:00 Korea Standard Time. The user can also request a s
 
 Before each work period:
 
+Run `node tools/verify-closeout.mjs --latest` before starting the next period. If the latest record fails, repair it with available evidence and run the check again. Do not begin a new session or dispatch its team until the check passes.
+
+The Codex Stop hook requests a correction when the latest record fails. The Git pre-commit hook rejects staged session closeouts that fail validation. Keep both checks enabled. See tools/README.md for activation in a new checkout.
+
 1. Record the start date and time in Korea Standard Time, the window length, and the planned end time in a new record under work-logs/.
 2. Select the task with the greatest impact under Rule 3. Choose an amount of work that can be completed and checked within the window.
 3. Record the goal, planned results, and verification method under Rule 2.
@@ -56,6 +60,8 @@ During each work period:
 - Stop work when the window closes. If the goal is not complete, record the incomplete work and its cause. Do not report incomplete work as complete or extend the current window to hide a missed goal.
 
 At the end of each work period, record:
+
+Use the closeout fields in the work log template. Measure the full session through closeout, not just the last handoff. Assess each member and the coordinator against TEAM-PERFORMANCE.md. Explain how to use the time better and give the next management change a measurable check. Run the validator against the completed record before moving on. The validator checks fields and arithmetic. The coordinator checks the evidence and the quality of the assessment.
 
 - The actual end time and elapsed time.
 - The results achieved compared with the planned results.
