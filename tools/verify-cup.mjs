@@ -77,6 +77,14 @@ try {
     assert.match(actual, expected);
   }
 
+  async function pressSpecial(code, windowsVirtualKeyCode) {
+    const key = { code, key: code, windowsVirtualKeyCode, nativeVirtualKeyCode: windowsVirtualKeyCode };
+    await request('Input.dispatchKeyEvent', {
+      type: 'keyDown', ...key, ...(code === 'Enter' ? { text: '\r', unmodifiedText: '\r' } : {}),
+    });
+    await request('Input.dispatchKeyEvent', { type: 'keyUp', ...key });
+  }
+
   async function press(letter) {
     const code = `Key${letter}`;
     const key = letter.toLowerCase();
@@ -90,16 +98,17 @@ try {
     await evaluate(`Object.assign(player, { x: ${x}, z: ${z}, yaw: ${yaw} }); document.querySelector('#room').focus();`);
   }
 
-  async function walkUntil(condition) {
-    await request('Input.dispatchKeyEvent', { type: 'keyDown', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+  async function walkUntil(condition, letter = 'W') {
+    const key = { code: `Key${letter}`, key: letter.toLowerCase(), windowsVirtualKeyCode: letter.charCodeAt(0) };
+    await request('Input.dispatchKeyEvent', { type: 'keyDown', ...key });
     try {
-      for (let attempt = 0; attempt < 30; attempt += 1) {
+      for (let attempt = 0; attempt < 75; attempt += 1) {
         if (await evaluate(condition)) return;
         await wait(50);
       }
       assert.fail(`Walking did not reach the expected position: ${condition}`);
     } finally {
-      await request('Input.dispatchKeyEvent', { type: 'keyUp', code: 'KeyW', key: 'w', windowsVirtualKeyCode: 87 });
+      await request('Input.dispatchKeyEvent', { type: 'keyUp', ...key });
     }
   }
 
@@ -127,6 +136,40 @@ try {
   }
   assert(loaded, 'Cup Room loaded');
 
+  if (process.argv.includes('--journey')) {
+    await pressSpecial('Tab', 9);
+    assert(await evaluate('document.activeElement.id === "room"'), 'Tab focuses the room');
+    await walkUntil('player.z >= 3.15');
+    await press('E');
+    await expectStatus(/you have the cup/i);
+    await walkUntil('player.x >= 1.9', 'D');
+    await press('E');
+    await expectStatus(/task complete.*yellow stand/i);
+    await press('E');
+    await expectStatus(/you have the cup/i);
+    await walkUntil('player.x <= -1.25', 'A');
+    await walkUntil('player.z >= 5.2');
+    await walkUntil('player.x >= -0.05', 'D');
+    await walkUntil('player.z >= 8.2');
+    await walkUntil('player.x <= -1.6', 'A');
+    await walkUntil('player.z >= 9.1');
+    let close;
+    for (let attempt = 0; attempt < 75 && !close; attempt += 1) {
+      close = await evaluate('resident.z - player.z < 1.2');
+      if (!close) await wait(100);
+    }
+    assert(close, 'Resident entered interaction range');
+    await press('F');
+    await expectStatus(/hello.*wait here briefly/i);
+    assert(await evaluate('!document.querySelector("#task-completion").hidden'), 'Completion survives resident status');
+    await pressSpecial('Tab', 9);
+    assert(await evaluate('document.activeElement.id === "reset"'), 'Tab focuses Reset');
+    await pressSpecial('Enter', 13);
+    await expectStatus(/cup is on the table/i);
+    assert(await evaluate('Math.abs(player.z - 1.1) < 0.01'), 'Keyboard Reset restores spawn');
+    assert(await evaluate('document.querySelector("#task-completion").hidden'), 'Reset clears completion');
+    console.log('PASS: full journey by keyboard from initial spawn, with no state writes');
+  } else {
   const surfaces = [
     { label: 'table', x: 0, z: 3.1, result: /on the table/i },
     { label: 'stand', x: 1.9, z: 3.4, result: /on the yellow stand/i },
@@ -217,11 +260,15 @@ try {
     return box.top >= 0 && box.bottom <= innerHeight;
   })`), 'Recovery cue and Reset fit 800 × 480');
   console.log('PASS: recovery cue and Reset fit 800 × 480');
-  await request('Browser.close').catch(() => {});
+  }
 } finally {
+  if (socket?.readyState === WebSocket.OPEN) socket.send(JSON.stringify({ id: 2147483647, method: 'Browser.close' }));
   socket?.close();
   for (let attempt = 0; attempt < 30 && browser.exitCode === null && browser.signalCode === null && !spawnError; attempt += 1) {
-    if (attempt === 10) browser.kill();
+    if (attempt === 10) {
+      const kill = spawn('taskkill', ['/PID', String(browser.pid), '/T', '/F'], { stdio: 'ignore', windowsHide: true });
+      kill.on('error', () => browser.kill());
+    }
     await wait(100);
   }
   await rm(profile, { recursive: true, force: true, maxRetries: 8, retryDelay: 150 });

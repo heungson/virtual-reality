@@ -3,6 +3,7 @@
 const canvas = document.querySelector('#room');
 const context = canvas.getContext('2d');
 const status = document.querySelector('#status');
+const taskCompletion = document.querySelector('#task-completion');
 const pressed = new Set();
 const table = { x: 0, z: 4.1, width: 1.8, depth: 0.85, top: 0.9 };
 const stand = { x: 1.9, z: 4.4, width: 0.65, depth: 0.65, top: 0.8 };
@@ -26,6 +27,7 @@ function resetRoom() {
   cup = { x: table.x, z: table.z, support: table };
   resident = { x: residentRoute.x, z: residentRoute.start, direction: 1, pausedSeconds: 0 };
   taskComplete = false;
+  taskCompletion.hidden = true;
   pressed.clear();
   status.textContent = 'The cup is on the table.';
 }
@@ -131,6 +133,7 @@ function releaseCup(x, z) {
   }, floor);
   cup = { x, z, support };
   taskComplete ||= support === stand;
+  taskCompletion.hidden = !taskComplete;
   const place = support === stand ? 'yellow stand' : support === table ? 'table' : support.name;
   const completion = taskComplete ? 'Task complete. ' : '';
   status.textContent = `${completion}The cup is on the ${place}.`;
