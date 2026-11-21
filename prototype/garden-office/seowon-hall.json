@@ -1,0 +1,1055 @@
+{
+  "version": 1,
+  "title": "Hillside Seowon",
+  "lighting": {
+    "direction": [
+      -0.52,
+      0.64,
+      0.56
+    ],
+    "ambient": 0.8
+  },
+  "instances": [
+    {
+      "id": "upper-meeting-roof",
+      "asset": "pavilion-roof",
+      "placement": {
+        "anchor": [
+          159.52,
+          42,
+          41.04
+        ],
+        "span": 192.96,
+        "depth": 48,
+        "height": 55,
+        "profile": "curved"
+      }
+    },
+    {
+      "id": "quiet-study-roof",
+      "asset": "pavilion-roof",
+      "placement": {
+        "anchor": [
+          96.4,
+          165,
+          24.24
+        ],
+        "span": 112.8,
+        "depth": 44,
+        "height": 42
+      }
+    },
+    {
+      "id": "group-work-roof",
+      "asset": "pavilion-roof",
+      "placement": {
+        "anchor": [
+          300.4,
+          165,
+          24.24
+        ],
+        "span": 112.8,
+        "depth": 44,
+        "height": 42
+      }
+    },
+    {
+      "id": "quiet-desk-one",
+      "asset": "table",
+      "placement": {
+        "anchor": [
+          118,
+          209,
+          24.24
+        ],
+        "scale": 0.3
+      }
+    },
+    {
+      "id": "quiet-seat-one",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          132,
+          219,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "quiet-desk-two",
+      "asset": "table",
+      "placement": {
+        "anchor": [
+          157,
+          194,
+          24.24
+        ],
+        "scale": 0.3
+      }
+    },
+    {
+      "id": "quiet-seat-two",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          171,
+          204,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "group-table",
+      "asset": "table",
+      "placement": {
+        "anchor": [
+          337,
+          211,
+          24.24
+        ],
+        "scale": 0.43
+      }
+    },
+    {
+      "id": "group-seat-back-one",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          347,
+          199,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "group-seat-back-two",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          374,
+          199,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "group-seat-front-one",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          347,
+          224,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "group-seat-front-two",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          374,
+          224,
+          24.24
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-table",
+      "asset": "table",
+      "placement": {
+        "anchor": [
+          186.4,
+          84.468,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-back-1",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          188.32,
+          73.428,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-front-1",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          188.32,
+          108.612,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-back-2",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          250.72,
+          73.428,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-front-2",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          250.72,
+          108.612,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-back-3",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          313.6,
+          73.428,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "meeting-seat-front-3",
+      "asset": "chair",
+      "placement": {
+        "anchor": [
+          313.6,
+          108.612,
+          41.04
+        ],
+        "scale": 1
+      }
+    },
+    {
+      "id": "axis-arrival-gate",
+      "asset": "pavilion-roof",
+      "placement": {
+        "anchor": [
+          221.2,
+          333,
+          0.36
+        ],
+        "span": 70.32,
+        "depth": 12,
+        "height": 35
+      }
+    },
+    {
+      "id": "arrival-west-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          113.2,
+          288.72,
+          0.36
+        ],
+        "width": 108,
+        "depth": 103.92,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "arrival-east-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          291.52,
+          288.72,
+          0.36
+        ],
+        "width": 107.76,
+        "depth": 103.92,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "middle-west-side-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          91.6,
+          159.84,
+          16.56
+        ],
+        "width": 9.6,
+        "depth": 94.56,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "middle-west-front-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          91.6,
+          254.4,
+          16.56
+        ],
+        "width": 113.4,
+        "depth": 30.24,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "middle-east-side-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          408.4,
+          159.84,
+          16.56
+        ],
+        "width": 12,
+        "depth": 94.56,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "middle-east-front-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          330,
+          254.4,
+          16.56
+        ],
+        "width": 90.4,
+        "depth": 30.24,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-west-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          68.8,
+          24,
+          31.68
+        ],
+        "width": 98.4,
+        "depth": 135.6,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-east-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          374,
+          24,
+          31.68
+        ],
+        "width": 69.2,
+        "depth": 135.6,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-rear-garden",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          167.2,
+          24,
+          31.68
+        ],
+        "width": 206.8,
+        "depth": 22.8,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "arrival-axis-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          221.2,
+          295.92,
+          0.36
+        ],
+        "width": 70.32,
+        "depth": 96.72,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "middle-axis-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          221.2,
+          162.48,
+          16.56
+        ],
+        "width": 70.32,
+        "depth": 98.4,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "quiet-approach-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          214,
+          230.4,
+          16.56
+        ],
+        "width": 7.2,
+        "depth": 16.8,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "group-approach-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          291.52,
+          254.4,
+          16.56
+        ],
+        "width": 38.48,
+        "depth": 30.24,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "upper-arrival-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          222.88,
+          130.8,
+          31.68
+        ],
+        "width": 122,
+        "depth": 4.8,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "meeting-side-approach-stone",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          344.88,
+          110.4,
+          31.68
+        ],
+        "width": 29.12,
+        "depth": 25.2,
+        "finish": "stone"
+      }
+    },
+    {
+      "id": "quiet-study-wing-timber",
+      "asset": "boardwalk",
+      "placement": {
+        "anchor": [
+          101.2,
+          168,
+          24.24
+        ],
+        "width": 103.2,
+        "depth": 86.4
+      }
+    },
+    {
+      "id": "teaching-wing-timber",
+      "asset": "boardwalk",
+      "placement": {
+        "anchor": [
+          305.2,
+          168,
+          24.24
+        ],
+        "width": 103.2,
+        "depth": 86.4
+      }
+    },
+    {
+      "id": "upper-meeting-platform-timber",
+      "asset": "boardwalk",
+      "placement": {
+        "anchor": [
+          167.2,
+          46.8,
+          41.04
+        ],
+        "width": 177.6,
+        "depth": 87.6
+      }
+    },
+    {
+      "id": "light-cue-1",
+      "asset": "light-cue",
+      "placement": {
+        "anchor": [
+          233,
+          83,
+          41.04
+        ],
+        "width": 111.8,
+        "depth": 48.4
+      }
+    },
+    {
+      "id": "arrival-west-lower-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          127,
+          307,
+          0.36
+        ],
+        "width": 55,
+        "depth": 25,
+        "height": 8
+      }
+    },
+    {
+      "id": "arrival-west-lower-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          127,
+          307,
+          8.36
+        ],
+        "width": 55,
+        "depth": 25,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "arrival-west-upper-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          132,
+          310,
+          8.36
+        ],
+        "width": 44,
+        "depth": 16,
+        "height": 8
+      }
+    },
+    {
+      "id": "arrival-west-upper-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          132,
+          310,
+          16.36
+        ],
+        "width": 44,
+        "depth": 16,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "arrival-east-lower-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          339,
+          337,
+          0.36
+        ],
+        "width": 46,
+        "depth": 39,
+        "height": 7
+      }
+    },
+    {
+      "id": "arrival-east-lower-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          339,
+          337,
+          7.36
+        ],
+        "width": 46,
+        "depth": 39,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "arrival-east-upper-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          346,
+          343,
+          7.36
+        ],
+        "width": 32,
+        "depth": 25,
+        "height": 7
+      }
+    },
+    {
+      "id": "arrival-east-upper-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          346,
+          343,
+          14.36
+        ],
+        "width": 32,
+        "depth": 25,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-west-lower-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          82,
+          47,
+          31.68
+        ],
+        "width": 64,
+        "depth": 42,
+        "height": 10
+      }
+    },
+    {
+      "id": "upper-west-lower-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          82,
+          47,
+          41.68
+        ],
+        "width": 64,
+        "depth": 42,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-west-upper-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          91,
+          54,
+          41.68
+        ],
+        "width": 48,
+        "depth": 26,
+        "height": 9
+      }
+    },
+    {
+      "id": "upper-west-upper-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          91,
+          54,
+          50.68
+        ],
+        "width": 48,
+        "depth": 26,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-east-lower-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          386,
+          49,
+          31.68
+        ],
+        "width": 46,
+        "depth": 52,
+        "height": 11
+      }
+    },
+    {
+      "id": "upper-east-lower-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          386,
+          49,
+          42.68
+        ],
+        "width": 46,
+        "depth": 52,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "upper-east-upper-retainer",
+      "asset": "wall",
+      "placement": {
+        "anchor": [
+          393,
+          56,
+          42.68
+        ],
+        "width": 32,
+        "depth": 38,
+        "height": 10
+      }
+    },
+    {
+      "id": "upper-east-upper-olive",
+      "asset": "stone-paving",
+      "placement": {
+        "anchor": [
+          393,
+          56,
+          52.68
+        ],
+        "width": 32,
+        "depth": 38,
+        "finish": "garden"
+      }
+    },
+    {
+      "id": "tree-1",
+      "asset": "tree",
+      "placement": {
+        "anchor": [
+          104,
+          61,
+          50.68
+        ],
+        "scale": 0.95
+      }
+    },
+    {
+      "id": "tree-2",
+      "asset": "tree",
+      "placement": {
+        "anchor": [
+          87,
+          74,
+          41.68
+        ],
+        "scale": 0.55
+      }
+    },
+    {
+      "id": "tree-3",
+      "asset": "tree",
+      "placement": {
+        "anchor": [
+          410,
+          77,
+          52.68
+        ],
+        "scale": 0.83
+      }
+    },
+    {
+      "id": "tree-4",
+      "asset": "tree",
+      "placement": {
+        "anchor": [
+          155,
+          318,
+          16.36
+        ],
+        "scale": 0.73
+      }
+    },
+    {
+      "id": "tree-5",
+      "asset": "tree",
+      "placement": {
+        "anchor": [
+          362,
+          360,
+          14.36
+        ],
+        "scale": 0.62
+      }
+    }
+  ],
+  "geometry": {
+    "floors": [
+      {
+        "id": "arrival-court",
+        "anchor": [
+          113.2,
+          288.72,
+          0.36
+        ],
+        "width": 286.08,
+        "depth": 103.92,
+        "slab": 6.72
+      },
+      {
+        "id": "middle-terrace",
+        "anchor": [
+          91.6,
+          159.84,
+          16.56
+        ],
+        "width": 328.8,
+        "depth": 101.04,
+        "slab": 16.56
+      },
+      {
+        "id": "middle-terrace-left",
+        "anchor": [
+          91.6,
+          260.88,
+          16.56
+        ],
+        "width": 129.6,
+        "depth": 23.76,
+        "slab": 16.56
+      },
+      {
+        "id": "middle-terrace-right",
+        "anchor": [
+          291.52,
+          260.88,
+          16.56
+        ],
+        "width": 128.88,
+        "depth": 23.76,
+        "slab": 16.56
+      },
+      {
+        "id": "upper-terrace",
+        "anchor": [
+          68.8,
+          24,
+          31.68
+        ],
+        "width": 374.4,
+        "depth": 111.6,
+        "slab": 31.68
+      },
+      {
+        "id": "upper-terrace-left",
+        "anchor": [
+          68.8,
+          135.6,
+          31.68
+        ],
+        "width": 154.08,
+        "depth": 24,
+        "slab": 31.68
+      },
+      {
+        "id": "upper-terrace-right",
+        "anchor": [
+          288.88,
+          135.6,
+          31.68
+        ],
+        "width": 154.32,
+        "depth": 24,
+        "slab": 31.68
+      },
+      {
+        "id": "quiet-study-wing",
+        "anchor": [
+          101.2,
+          168,
+          24.24
+        ],
+        "width": 103.2,
+        "depth": 86.4,
+        "slab": 6.96
+      },
+      {
+        "id": "teaching-wing",
+        "anchor": [
+          305.2,
+          168,
+          24.24
+        ],
+        "width": 103.2,
+        "depth": 86.4,
+        "slab": 6.96
+      },
+      {
+        "id": "upper-meeting-platform",
+        "anchor": [
+          167.2,
+          46.8,
+          41.04
+        ],
+        "width": 177.6,
+        "depth": 87.6,
+        "slab": 6.96
+      }
+    ],
+    "stairs": [
+      {
+        "id": "lower-flight",
+        "from": [
+          256.36,
+          295.92,
+          0.36
+        ],
+        "to": [
+          256.36,
+          260.88,
+          16.56
+        ],
+        "count": 5,
+        "width": 70.32,
+        "finish": "stone"
+      },
+      {
+        "id": "quiet-room-access",
+        "from": [
+          214,
+          238.8,
+          16.56
+        ],
+        "to": [
+          204.4,
+          238.8,
+          24.24
+        ],
+        "count": 2,
+        "width": 16.8,
+        "finish": "stone"
+      },
+      {
+        "id": "teaching-room-access",
+        "from": [
+          320,
+          272,
+          16.56
+        ],
+        "to": [
+          320,
+          254.4,
+          24.24
+        ],
+        "count": 2,
+        "width": 16.8,
+        "finish": "stone"
+      },
+      {
+        "id": "upper-flight",
+        "from": [
+          255.88,
+          162.48,
+          16.56
+        ],
+        "to": [
+          255.88,
+          135.6,
+          31.68
+        ],
+        "count": 5,
+        "width": 66,
+        "finish": "stone"
+      },
+      {
+        "id": "meeting-side-access",
+        "from": [
+          361.6,
+          118.8,
+          31.68
+        ],
+        "to": [
+          344.8,
+          118.8,
+          41.04
+        ],
+        "count": 3,
+        "width": 16.8,
+        "finish": "stone"
+      }
+    ]
+  },
+  "route": [
+    {
+      "name": "Arrival gate",
+      "point": [
+        256.36,
+        359.52,
+        0.36
+      ]
+    },
+    {
+      "name": "Middle landing",
+      "point": [
+        256.36,
+        260.88,
+        16.56
+      ]
+    },
+    {
+      "name": "Quiet study",
+      "point": [
+        197.2,
+        238.8,
+        24.24
+      ]
+    },
+    {
+      "name": "Group work",
+      "point": [
+        320,
+        243,
+        24.24
+      ]
+    },
+    {
+      "name": "Upper landing",
+      "point": [
+        255.88,
+        135.6,
+        31.68
+      ]
+    },
+    {
+      "name": "Upper meeting hall",
+      "point": [
+        339.52,
+        118.8,
+        41.04
+      ]
+    }
+  ]
+}

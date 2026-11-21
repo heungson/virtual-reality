@@ -1,0 +1,510 @@
+{
+  "study": "JOS-002",
+  "format": "design geometry proposal, version 1",
+  "source": {
+    "files": [
+      "draw-studies.py:Study.point, Study.block, Study.steps, Study.room, academy",
+      "JOS-002.svg",
+      "JOS-002.png"
+    ],
+    "axes": "In study units. x increases to screen lower right, y to screen lower left, z upward. Uphill travel decreases y.",
+    "projection": {
+      "u": "520 + 21 * (x - y)",
+      "v": "216 + 11 * (x + y) - 24 * z",
+      "size": [
+        1040,
+        720
+      ]
+    },
+    "runtimeTransform": null,
+    "surfaces": {
+      "site": {
+        "anchor": [
+          0,
+          0,
+          0
+        ],
+        "size": [
+          18,
+          18
+        ],
+        "thickness": 0.28
+      },
+      "arrival-court": {
+        "anchor": [
+          3.05,
+          12.03,
+          0.015
+        ],
+        "size": [
+          11.92,
+          4.33
+        ],
+        "thickness": null
+      },
+      "middle-terrace": {
+        "anchor": [
+          2.15,
+          6.66,
+          0.69
+        ],
+        "size": [
+          13.7,
+          5.2
+        ],
+        "thickness": 0.69
+      },
+      "middle-paving": {
+        "anchor": [
+          7.75,
+          6.68,
+          0.7
+        ],
+        "size": [
+          2.49,
+          5.15
+        ],
+        "thickness": null
+      },
+      "upper-terrace": {
+        "anchor": [
+          1.2,
+          1.0,
+          1.32
+        ],
+        "size": [
+          15.6,
+          5.65
+        ],
+        "thickness": 1.32
+      },
+      "quiet-study-wing": {
+        "anchor": [
+          2.55,
+          7.0,
+          1.01
+        ],
+        "size": [
+          4.3,
+          3.6
+        ],
+        "thickness": 0.29
+      },
+      "teaching-wing": {
+        "anchor": [
+          11.05,
+          7.0,
+          1.01
+        ],
+        "size": [
+          4.3,
+          3.6
+        ],
+        "thickness": 0.29
+      },
+      "upper-meeting-platform": {
+        "anchor": [
+          5.3,
+          1.95,
+          1.71
+        ],
+        "size": [
+          7.4,
+          3.65
+        ],
+        "thickness": 0.29
+      }
+    },
+    "flights": {
+      "lower-flight": {
+        "origin": [
+          7.55,
+          10.87,
+          0.015
+        ],
+        "width": 2.93,
+        "run": 1.46,
+        "rise": 0.67,
+        "treads": [
+          {
+            "origin": [
+              7.55,
+              10.87,
+              0.551
+            ],
+            "size": [
+              2.93,
+              0.312,
+              0.159
+            ],
+            "top": 0.71
+          },
+          {
+            "origin": [
+              7.55,
+              11.162,
+              0.417
+            ],
+            "size": [
+              2.93,
+              0.312,
+              0.159
+            ],
+            "top": 0.576
+          },
+          {
+            "origin": [
+              7.55,
+              11.454,
+              0.283
+            ],
+            "size": [
+              2.93,
+              0.312,
+              0.159
+            ],
+            "top": 0.442
+          },
+          {
+            "origin": [
+              7.55,
+              11.746,
+              0.149
+            ],
+            "size": [
+              2.93,
+              0.312,
+              0.159
+            ],
+            "top": 0.308
+          },
+          {
+            "origin": [
+              7.55,
+              12.038,
+              0.015
+            ],
+            "size": [
+              2.93,
+              0.312,
+              0.159
+            ],
+            "top": 0.174
+          }
+        ]
+      },
+      "upper-flight": {
+        "origin": [
+          7.62,
+          5.65,
+          0.69
+        ],
+        "width": 2.75,
+        "run": 1.12,
+        "rise": 0.63,
+        "treads": [
+          {
+            "origin": [
+              7.62,
+              5.65,
+              1.194
+            ],
+            "size": [
+              2.75,
+              0.244,
+              0.151
+            ],
+            "top": 1.345
+          },
+          {
+            "origin": [
+              7.62,
+              5.874,
+              1.068
+            ],
+            "size": [
+              2.75,
+              0.244,
+              0.151
+            ],
+            "top": 1.219
+          },
+          {
+            "origin": [
+              7.62,
+              6.098,
+              0.942
+            ],
+            "size": [
+              2.75,
+              0.244,
+              0.151
+            ],
+            "top": 1.093
+          },
+          {
+            "origin": [
+              7.62,
+              6.322,
+              0.816
+            ],
+            "size": [
+              2.75,
+              0.244,
+              0.151
+            ],
+            "top": 0.967
+          },
+          {
+            "origin": [
+              7.62,
+              6.546,
+              0.69
+            ],
+            "size": [
+              2.75,
+              0.244,
+              0.151
+            ],
+            "top": 0.841
+          }
+        ]
+      }
+    }
+  },
+  "contactNormalized": {
+    "axes": "Same coordinates and units as source. No scale, rotation, or engine mapping is assigned.",
+    "floorPolicy": "Use authored slab footprints and tops. Arrival paving is the lower walking surface. Flatten the middle .70 paving overlay and tile detail to the .69 terrace. Preserve room deck elevations.",
+    "stairPolicy": "Use endpoint horizontal coordinates, remove the .02 drawn tread overlap and .025 top lip, and divide each run and endpoint rise into five equal treads.",
+    "clearFlightOpenings": [
+      {
+        "floor": "middle-terrace",
+        "x": [
+          7.55,
+          10.48
+        ],
+        "y": [
+          10.87,
+          11.86
+        ]
+      },
+      {
+        "floor": "upper-terrace",
+        "x": [
+          7.62,
+          10.37
+        ],
+        "y": [
+          5.65,
+          6.65
+        ]
+      }
+    ],
+    "openingBoundary": "Open strips toward the low side. Keep the high transverse edge at the crown y and usable terrace outside the strips. Clip any decorative overlays inside the cut strips.",
+    "points": {
+      "arrival-gate": [
+        9.015,
+        14.98,
+        0.015
+      ],
+      "lower-foot": [
+        9.015,
+        12.33,
+        0.015
+      ],
+      "middle-arrival": [
+        9.015,
+        10.87,
+        0.69
+      ],
+      "middle-work-junction": [
+        9.015,
+        9.95,
+        0.69
+      ],
+      "quiet-threshold-foot": [
+        7.25,
+        9.95,
+        0.69
+      ],
+      "quiet-threshold-top": [
+        6.85,
+        9.95,
+        1.01
+      ],
+      "quiet-study": [
+        6.55,
+        9.95,
+        1.01
+      ],
+      "teaching-threshold-foot": [
+        10.65,
+        9.95,
+        0.69
+      ],
+      "teaching-threshold-top": [
+        11.05,
+        9.95,
+        1.01
+      ],
+      "group-work": [
+        11.35,
+        9.95,
+        1.01
+      ],
+      "upper-alignment": [
+        8.995,
+        9.95,
+        0.69
+      ],
+      "upper-foot": [
+        8.995,
+        6.77,
+        0.69
+      ],
+      "upper-arrival": [
+        8.995,
+        5.65,
+        1.32
+      ],
+      "meeting-turn": [
+        13.4,
+        5.65,
+        1.32
+      ],
+      "meeting-threshold-foot": [
+        13.4,
+        4.95,
+        1.32
+      ],
+      "meeting-threshold-top": [
+        12.7,
+        4.95,
+        1.71
+      ],
+      "meeting-hall": [
+        12.48,
+        4.95,
+        1.71
+      ]
+    },
+    "edges": [
+      {
+        "start": "arrival-gate",
+        "end": "lower-foot",
+        "kind": "floor",
+        "support": "arrival-court"
+      },
+      {
+        "start": "lower-foot",
+        "end": "middle-arrival",
+        "kind": "stair",
+        "support": "lower-flight",
+        "width": 2.93,
+        "count": 5
+      },
+      {
+        "start": "middle-arrival",
+        "end": "middle-work-junction",
+        "kind": "floor",
+        "support": "middle-terrace"
+      },
+      {
+        "start": "middle-work-junction",
+        "end": "quiet-threshold-foot",
+        "kind": "floor",
+        "support": "middle-terrace"
+      },
+      {
+        "start": "quiet-threshold-foot",
+        "end": "quiet-threshold-top",
+        "kind": "threshold",
+        "support": "quiet-room-access",
+        "width": 0.7,
+        "count": 2
+      },
+      {
+        "start": "quiet-threshold-top",
+        "end": "quiet-study",
+        "kind": "floor",
+        "support": "quiet-study-wing"
+      },
+      {
+        "start": "middle-work-junction",
+        "end": "teaching-threshold-foot",
+        "kind": "floor",
+        "support": "middle-terrace"
+      },
+      {
+        "start": "teaching-threshold-foot",
+        "end": "teaching-threshold-top",
+        "kind": "threshold",
+        "support": "teaching-room-access",
+        "width": 0.7,
+        "count": 2
+      },
+      {
+        "start": "teaching-threshold-top",
+        "end": "group-work",
+        "kind": "floor",
+        "support": "teaching-wing"
+      },
+      {
+        "start": "middle-work-junction",
+        "end": "upper-alignment",
+        "kind": "floor",
+        "support": "middle-terrace"
+      },
+      {
+        "start": "upper-alignment",
+        "end": "upper-foot",
+        "kind": "floor",
+        "support": "middle-terrace"
+      },
+      {
+        "start": "upper-foot",
+        "end": "upper-arrival",
+        "kind": "stair",
+        "support": "upper-flight",
+        "width": 2.75,
+        "count": 5
+      },
+      {
+        "start": "upper-arrival",
+        "end": "meeting-turn",
+        "kind": "floor",
+        "support": "upper-terrace"
+      },
+      {
+        "start": "meeting-turn",
+        "end": "meeting-threshold-foot",
+        "kind": "floor",
+        "support": "upper-terrace"
+      },
+      {
+        "start": "meeting-threshold-foot",
+        "end": "meeting-threshold-top",
+        "kind": "threshold",
+        "support": "meeting-side-access",
+        "width": 0.7,
+        "count": 3
+      },
+      {
+        "start": "meeting-threshold-top",
+        "end": "meeting-hall",
+        "kind": "floor",
+        "support": "upper-meeting-platform"
+      }
+    ],
+    "namedStops": {
+      "arrival-gate": "Arrival gate",
+      "middle-arrival": "Middle landing",
+      "quiet-study": "Quiet study",
+      "group-work": "Group work",
+      "upper-arrival": "Upper landing",
+      "meeting-hall": "Upper meeting hall"
+    },
+    "newThresholds": "Three design additions for the raised decks. Give the two work wings side access from the middle court and the hall side access from the east terrace. The source has open sides in the cutaway and no drawn access stairs here.",
+    "clearanceLimit": "The graph checks support and intended contacts. Avatar collision, gait, usable width, door details, and runtime route presentation need verification in a candidate scene."
+  }
+}
